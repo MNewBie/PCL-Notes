@@ -122,4 +122,8 @@ static_cast<LookUpTableRepresentationProperties>(int(value))
 ```
 >pcl1.8.0 用eigen3.3编译失败，ndt2d无法编译，换3.2可以
 
+* **添加环境变量**
+
+将以上所有编译的库中含有bin目录的添加到path中即可，OpenNI2添加Tools目录。
+
  
