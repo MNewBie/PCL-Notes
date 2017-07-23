@@ -96,4 +96,8 @@ Value: -gd
 > 添加了qt INSTALL会出错！原因是QVTKWidgetPlugin.dll也加了-gd，vs找不到，去掉即可。
 
 生成完成后，在VTKBuildDIR\plugins\designer 中找到 QVTKWidgetPlugin.dll 插件，将其复制到 QtCreatorDIR\bin\plugins\designer目录中，用于在 Qt Creator的 designer中显示 QVTKWidget 控件。
+
+* **编译PCL库**
+
+
  
