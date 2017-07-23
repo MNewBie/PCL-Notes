@@ -3,8 +3,8 @@
 **pcl需要第三方库的支持：Boost、Eigen、FLANN、Qhull、VTK、OpenNI、[CUDA]**
 
 * **工具**
-VS
-cmake
+    VS
+    cmake
 
 * **编译Boost库**
 
