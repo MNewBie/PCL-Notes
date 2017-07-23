@@ -72,6 +72,6 @@ BASIC_TYPE_SERIALIZER( unsigned __int64 );//注意此处__int64是两个下划�
 #endif
 ```
 
-修改完后以管理员身份运行VS2013并打开flann.sln工程文件，待加载完文件后，（debug & release）生成all_build，完成后生成install(Debugand Release)。完成后可以看到flann安装路径下出现include和lib文件夹。最后在环境变量中建立FLANN_ROOT变量，值为flann安装路径。
+修改完后以管理员身份运行VS2013并打开flann.sln工程文件，待加载完文件后，（debug & release）生成all\_build，完成后生成install(Debugand Release)。完成后可以看到flann安装路径下出现include和lib文件夹。最后在环境变量中建立FLANN_ROOT变量，值为flann安装路径。
  
  
