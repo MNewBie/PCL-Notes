@@ -17,11 +17,13 @@ local microsoft_mpi_path = "C:\\Program Files\\Microsoft MPI" ;
 if [ GLOB $(microsoft_mpi_sdk_path)\\Include : mpi.h ]
 ```
 
-
-
 260-262 line
->  options = <include>$(microsoft_mpi_sdk_path)/Include
+```
+options = <include>$(microsoft_mpi_sdk_path)/Include
           <address-model>64:<library-path>$(microsoft_mpi_sdk_path)/Lib/x64
           <library-path>$(microsoft_mpi_sdk_path)/Lib/x86
+```
+
+
  
  
