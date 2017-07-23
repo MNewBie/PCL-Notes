@@ -89,6 +89,6 @@ configure -platform win32-msvc2015 -confirm-license -opensource -debug-and-relea
 Type: STRING
 Value: -gd
 
-修改完后再次点Configure，然后Generate。以管理员身份运行VS并打开VTK.sln工程文件，待加载完文件后，生成ALL_BUILD（debug和release）（时间有点久，很久，耐心等待），完成后生成install（debug和release）。完成后可以看到VTK文件夹中出现include和lib文件夹。最后在环境变量中建立VTK_ROOT，为VTK安装路径．
+修改完后再次点Configure，然后Generate。以管理员身份运行VS并打开VTK.sln工程文件，待加载完文件后，生成ALL\_BUILD（debug & release）（时间有点久，很久，耐心等待），完成后生成install（debug和release）。完成后可以看到VTK文件夹中出现include和lib文件夹。最后在环境变量中建立VTK_ROOT，为VTK安装路径．
 
  
