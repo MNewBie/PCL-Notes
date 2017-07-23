@@ -44,6 +44,8 @@ b2.exe toolset=msvc-12.0 address-model=64 --build-dir=build\x64 install --prefix
 
 **以管理员身份运行VS**（否则install时会失败），打开bulid文件夹下的eigen.sln工程，待加载完文件后，VS->生成->批生成->勾选ALL\_BUILD的Debug和 Release完成生成，完成后同理生成INSTALL(Debug and Release)。可以看到eigen安装路径中出现include文件夹。最后在环境变量中建立EIGEN\_ROOT变量，值为eigen的安装路径。
 
+* **编译qhull**
+
 
 
 
