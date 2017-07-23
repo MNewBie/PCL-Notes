@@ -1,6 +1,6 @@
 # PCL的编译与安装
 
-**pcl需要第三方库的支持：Boost、Eigen、FLANN、Qhull、VTK、OpenNI、[QT、CUDA]**
+**pcl需要第三方库的支持：Boost、Eigen、FLANN、Qhull、VTK、OpenNI2、[QT、CUDA]**
 
 * **工具**
     VS
