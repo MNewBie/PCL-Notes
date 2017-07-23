@@ -97,6 +97,10 @@ Value: -gd
 
 生成完成后，在VTKBuildDIR\plugins\designer 中找到 QVTKWidgetPlugin.dll 插件，将其复制到 QtCreatorDIR\bin\plugins\designer目录中，用于在 Qt Creator的 designer中显示 QVTKWidget 控件。
 
+* **OpenNI2**
+
+下载安装即可。
+
 * **编译PCL库**
 
 同样使用cmake，打开CMakeLists.txt，按照提示添加第三方的库目录，如果需要编译Kinfu等内容，需要Nvida显卡、CUDA支持，CUDA下载安装即可。
