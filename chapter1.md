@@ -46,7 +46,7 @@ b2.exe toolset=msvc-12.0 address-model=64 --build-dir=build\x64 install --prefix
 
 * **编译qhull**
 
-使用cmake，分别设置qhull的source和build路径，如build不存在，点击Configure会提示新建build文件夹，选择vs编译器．注意根据需要修改CMAKE\_INSTALL\_PREFIX，然后添加一个entry：
+使用cmake，分别设置qhull的source和build路径，选择vs编译器．注意根据需要修改CMAKE\_INSTALL\_PREFIX，然后添加一个entry：
 
 >Name: CMAKE_DEBUG_POSTFIX
 Type: STRING
