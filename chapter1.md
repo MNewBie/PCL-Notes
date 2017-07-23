@@ -126,4 +126,11 @@ static_cast<LookUpTableRepresentationProperties>(int(value))
 
 将以上所有编译的库中含有bin目录的添加到path中即可，OpenNI2添加Tools目录。
 
+
+---
+
+* **现有exe安装**
+
+一路next即可，添加环境变量同上。
+
  
