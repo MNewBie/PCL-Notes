@@ -56,6 +56,6 @@ Value: -d
 
 * **编译flann库**
 
-
+使用cmake，分别设置Flann的source和build路径，选择vs编译器．注意根据需要修改CMAKE\_INSTALL\_PREFIX，然后去掉BULID\_MATLAB\_BINDINGS和BULID_PYTHON_BINDINGS的勾选，不bulid它们
  
  
