@@ -81,4 +81,6 @@ configure -platform win32-msvc2015 -confirm-license -opensource -debug-and-relea
 ```
 将qt的bin目录添加到环境变量path中。
 
+* **编译VTK库**
+
  
