@@ -83,4 +83,12 @@ configure -platform win32-msvc2015 -confirm-license -opensource -debug-and-relea
 
 * **编译VTK库**
 
+使用cmake，分别设置VTK的source和build路径，如build不存在，点击Configure会提示新建build文件夹，选择vs12-2013-win64编译器．注意根据需要修改CMAKE_INSTALL_PREFIX选项，然后添加一个entry：
+
+>Name: CMAKE_DEBUG_POSTFIX
+Type: STRING
+Value: -gd
+
+修改完后再次点Configure，然后Generate。以管理员身份运行VS2013并打开VTK.sln工程文件，待加载完文件后，生成ALL_BUILD（debug和release）（时间有点久，很久，耐心等待），完成后生成install（debug和release）。完成后可以看到VTK文件夹中出现include和lib文件夹。最后在环境变量中建立VTK_ROOT，为VTK安装路径．
+
  
