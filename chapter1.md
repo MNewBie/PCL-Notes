@@ -108,5 +108,5 @@ Value: -gd
 
 * **编译PCL库**
 
-同样使用cmake，打开CMakeLists.txt，按照提示添加第三方的库目录，
+同样使用cmake，打开CMakeLists.txt，按照提示添加第三方的库目录，勾选自己需要编译的内容即可。
  
