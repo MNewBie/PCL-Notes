@@ -31,7 +31,6 @@ options = <include>$(microsoft_mpi_sdk_path)/Include
 ```
 然后以管理员身份运行VS自带的cmd(“VS2013 x86 本机工具命令提示”)，进入boost文件夹，运行bootstrap.bat,运行结束后会生成project-config.jam，打开并在第四行加上：using mpi ;（注意“；”前面有一个空格！） 接下来还是用cmd进入boost文件夹，运行如下命令编译boost：
 
-ddd 
 ```
 Win32：
 b2.exe toolset=msvc-12.0 address-model=32 --build-dir=build\x86 install --prefix="C:\Program Files (x86)\Boost" -j8
