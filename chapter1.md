@@ -109,4 +109,13 @@ Value: -gd
 * **编译PCL库**
 
 同样使用cmake，打开CMakeLists.txt，按照提示添加第三方的库文件，勾选自己需要编译的内容即可。
+注意：
+>在win10上用vs2015编译PCL1.8的时候，编译到visualization模块时,pcl_visulalizer.cpp如下语句会报错。
+		if (!pcl::visualization::getColormapLUT (static_cast<LookUpTableRepresentationProperties>(value), table))
+		    break;
+		解决方案： 
+		将所有的
+		static_cast<LookUpTableRepresentationProperties>(value)
+		修改成
+		static_cast<LookUpTableRepresentationProperties>(int(value))
  
