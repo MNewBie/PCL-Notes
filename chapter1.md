@@ -99,5 +99,5 @@ Value: -gd
 
 * **编译PCL库**
 
-
+同样使用cmake，打开CMakeLists.txt，按照提示添加第三方的库目录，如果需要编译Kinfu等内容，需要Nvida显卡、CUDA支持，CUDA下载安装即可。
  
