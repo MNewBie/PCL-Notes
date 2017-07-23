@@ -74,5 +74,11 @@ BASIC_TYPE_SERIALIZER( unsigned __int64 );//注意此处__int64是两个下划�
 
 修改完后以管理员身份运行VS并打开flann.sln工程文件，待加载完文件后，（Debug & Release）生成all\_build，完成后生成install(Debug & Release)。完成后可以看到flann安装路径下出现include和lib文件夹。最后在环境变量中建立FLANN\_ROOT变量，值为flann安装路径。
 
+* **编译QT**
+
+```
+configure -platform win32-msvc2015 -confirm-license -opensource -debug-and-release -opengl desktop -prefix "" -nomake examples 
+```
+将qt的bin目录添加到环境变量path中。
 
  
