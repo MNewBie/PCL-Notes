@@ -44,7 +44,7 @@ b2.exe toolset=msvc-12.0 address-model=64 --build-dir=build\x64 install --prefix
 
 **以管理员身份运行VS**（否则install时会失败），打开bulid文件夹下的eigen.sln工程，待加载完文件后，VS->生成->批生成->勾选ALL\_BUILD的Debug和 Release完成生成，完成后同理生成INSTALL(Debug & Release)。可以看到eigen安装路径中出现include文件夹。最后在环境变量中建立EIGEN\_ROOT变量，值为eigen的安装路径。
 
-* **编译qhull**
+* **编译qhull库**
 
 使用cmake，分别设置qhull的source和build路径，选择vs编译器．注意根据需要修改CMAKE\_INSTALL\_PREFIX，然后添加一个entry：
 
@@ -54,7 +54,7 @@ Value: -d
 
 修改完后再次点Configure，然后Generate。以管理员身份运行VS并打开qhull.sln工程文件，待加载完文件后，完成后生成ALL\_BUILD（debug & release），然后生成INSTALL(Debug & Release)。完成后可以看到qhull安装路径中出现include和lib文件夹。最后在环境变量中建立QHULL\_ROOT变量，值为qhull安装地址。
 
-* **编译flann**
+* **编译flann库**
 
 
  
