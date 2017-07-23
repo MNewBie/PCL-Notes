@@ -52,7 +52,7 @@ b2.exe toolset=msvc-12.0 address-model=64 --build-dir=build\x64 install --prefix
 Type: STRING
 Value: -d
 
-修改完后再次点Configure，然后Generate。以管理员身份运行VS并打开qhull.sln工程文件，待加载完文件后，完成后生成ALL\_BUILD（debug和release），然后生成INSTALL(Debugand Release)。完成后可以看到qhull安装路径中出现include和lib文件夹。最后在环境变量中建立QHULL_ROOT变量，值为qhull安装地址。
+修改完后再次点Configure，然后Generate。以管理员身份运行VS并打开qhull.sln工程文件，待加载完文件后，完成后生成ALL\_BUILD（debug和release），然后生成INSTALL(Debugand Release)。完成后可以看到qhull安装路径中出现include和lib文件夹。最后在环境变量中建立QHULL\_ROOT变量，值为qhull安装地址。
 
 
 
