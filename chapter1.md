@@ -91,6 +91,6 @@ Value: -gd
 
 修改完后再次点Configure，然后Generate。以管理员身份运行VS并打开VTK.sln工程文件，待加载完文件后，生成ALL\_BUILD（debug & release），完成后生成install（debug & release）。完成后可以看到VTK文件夹中出现include和lib文件夹。最后在环境变量中建立VTK_ROOT，为VTK安装路径。
 
-如果需要编译QT支持插件，在cmake时勾选VTK\_Group\_Qt，VTK\_RENDERING\_BACKEND可以是OpenGL也可以是OpenGL2，我使用OpenGL2。 Configure 后可能会出现报错，将VTK\_QT\_VERSION 修改成 5，QT\_QMAKE\_EXECUTABLE 为QT\bin目录下的qmake.exe。点击 Configure 后仍然会报错，修改 Qt5_DIR 路径为 QTDIR\lib\cmake\Qt5
+如果需要编译QT支持插件，在cmake时勾选VTK\_Group\_Qt，VTK\_RENDERING\_BACKEND可以是OpenGL也可以是OpenGL2，我使用OpenGL2。 Configure 后可能会出现报错，将VTK\_QT\_VERSION 修改成 5，QT\_QMAKE\_EXECUTABLE 为QTDIR\bin目录下的qmake.exe。点击 Configure 后仍然会报错，修改 Qt5_DIR 路径为 QTDIR\lib\cmake\Qt5
 
  
