@@ -120,8 +120,6 @@ static_cast<LookUpTableRepresentationProperties>(value)
 修改成
 static_cast<LookUpTableRepresentationProperties>(int(value))
 ```
-
-
-
+>pcl1.8.0 用eigen3.3编译失败，ndt2d无法编译，换3.2可以
 
  
