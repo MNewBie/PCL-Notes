@@ -128,6 +128,7 @@ static_cast<LookUpTableRepresentationProperties>(int(value))
 
 **参考：**
 [VS编译PCL1.8.0](http://blog.csdn.net/yzheately/article/details/50938322)
+
 [VTK7.0&QTCreator5.6环境配置教程.pdf](https://wenku.baidu.com/view/ef13a7c94a7302768f9939ad.html)
 
 ---
