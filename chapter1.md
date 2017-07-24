@@ -127,6 +127,7 @@ static_cast<LookUpTableRepresentationProperties>(int(value))
 将以上所有编译的库中含有bin目录的添加到path中即可，OpenNI2添加Tools目录。
 
 **参考：**
+
 [VS编译PCL1.8.0](http://blog.csdn.net/yzheately/article/details/50938322)
 
 [VTK7.0&QTCreator5.6环境配置教程.pdf](https://wenku.baidu.com/view/ef13a7c94a7302768f9939ad.html)
