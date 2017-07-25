@@ -72,8 +72,6 @@ union
 
 * **PointXYZRGB - float x, y, z, rgb;** 
 
-
-
 ```
 union
 {
