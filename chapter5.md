@@ -91,7 +91,7 @@ struct
 
 ```
 
-* **Boundary - uint8_t boundary_point;**
+* **Boundary - uint8_t boundary_point;**<span id = "Boundary"/>
 
 Boundary存储一个点是否位于曲面边界上的简单point类型，查看BoundaryEstimation以获得更多信息。
 
