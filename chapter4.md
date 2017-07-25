@@ -32,7 +32,7 @@ union
 };
 ```
 
-* **PointXYZI–成员变量: float x, y, z, intensity;**<span id = "PointXYZI">
+* **PointXYZI–成员变量: float x, y, z, intensity;**<span id = "PointXYZI"/>
 
 
 
@@ -59,7 +59,7 @@ union
 };
 ```
 
-* **PointXYZRGBA–成员变量: float x, y, z; uint32_t rgba;**<span id = "PointXYZRGBA">
+* **PointXYZRGBA–成员变量: float x, y, z; uint32_t rgba;**<span id = "PointXYZRGBA"/>
 
 
 除了rgba信息被包含在一个整型变量中，其它的和PointXYZI类似。
@@ -86,7 +86,7 @@ union
 
 ```
 
-* **PointXYZRGB - float x, y, z, rgb;** <span id = "PointXYZRGB ">
+* **PointXYZRGB - float x, y, z, rgb;** <span id = "PointXYZRGB"/>
 
 ```
 union
@@ -109,7 +109,7 @@ union
 };
 ```
 
-* **PointXY-float x, y;**<span id = "PointXY">
+* **PointXY-float x, y;**<span id = "PointXY"/>
 
 简单的二维x-y point结构
 
@@ -121,7 +121,7 @@ struct
 };
 ```
 
-* **InterestPoint-float x, y, z, strength;**<span id = "InterestPoint">
+* **InterestPoint-float x, y, z, strength;**<span id = "InterestPoint"/>
 
 除了strength表示关键点的强度的测量值，其它的和PointXYZI类似。
 
@@ -146,7 +146,7 @@ union
 };
 ```
 
-* **Normal - float normal[3], curvature;**<span id = "Normal">
+* **Normal - float normal[3], curvature;**<span id = "Normal"/>
 
 另一个最常用的数据类型，Normal结构体表示给定点所在样本曲面上的法线方向，以及对应曲率的测量值（通过曲面块特征值之间关系获得——查看NormalEstimation类API以便获得更多信息，后续章节有介绍），由于在PCL中对曲面法线的操作很普遍，还是用第四个元素来占位，这样就兼容SSE和高效计算，例如，用户访问法向量的第一个坐标，可以通过points[i].data\_n[0]或者points[i].normal[0]或者points[i].normal\_x，再一次强调，曲率不能被存储在同一个结构体中，因为它会被普通的数据操作覆盖掉。
 
@@ -172,7 +172,7 @@ union
 };
 ```
 
-* **PointNormal - float x, y, z; float normal[3], curvature;**<span id = "PointNormal">
+* **PointNormal - float x, y, z; float normal[3], curvature;**<span id = "PointNormal"/>
 
 
 PointNormal是存储XYZ数据的point结构体，并且包括采样点对应法线和曲率。
@@ -248,7 +248,7 @@ union
 
 ```
 
-* **PointXYZINormal - float x, y, z, intensity, normal[3], curvature;**<span id = "PointXYZINormal"/>
+* **PointXYZINormal - float x, y, z, intensity, normal[3], curvature;**<span id = "PointXYZINormal"></span>
 
 
 PointXYZINormal存储XYZ数据和强度值的point结构体，并且包括曲面法线和曲率。
