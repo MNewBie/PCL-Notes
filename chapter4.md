@@ -209,7 +209,7 @@ union
 };
 ```
 
-* **PointXYZRGBNormal - float x, y, z, rgb, normal[3], curvature;**<span id = "PointXYZRGBNormal ">
+* **PointXYZRGBNormal - float x, y, z, rgb, normal[3], curvature;**<span id = "PointXYZRGBNormal">
 
 
 PointXYZRGBNormal存储XYZ数据和RGB颜色的point结构体，并且包括曲面法线和曲率
