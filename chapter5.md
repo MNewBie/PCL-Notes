@@ -4,7 +4,7 @@
     + [PointWithRange](#PointWithRange)
     + [PointWithViewpoint](#PointWithViewpoint)
     + [MomentInvariants](#MomentInvariants)
-    + [PointWithRange](#PointWithRange)
+    + [PrincipalRadiiRSD](#PrincipalRadiiRSD)
     + [PointWithRange](#PointWithRange)
 
 
