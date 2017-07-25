@@ -194,6 +194,42 @@ union
 
 * **PointXYZRGBNormal - float x, y, z, rgb, normal[3], curvature;**
 
+PointXYZRGBNormal存储XYZ数据和RGB颜色的point结构体，并且包括曲面法线和曲率
+
+```
+union
+{
+    float data[4];
+    struct
+    {
+        float x;
+        float y;
+        float z;
+    };
+};
+union
+{
+    float data_n[4];
+    float normal[3];
+    struct
+    {
+        float normal_x;
+        float normal_y;
+        float normal_z;
+    };
+}
+union
+{
+    struct
+    {
+        float rgb;
+        float curvature;
+    };
+    float data_c[4];
+};
+
+```
+
 
 
 
