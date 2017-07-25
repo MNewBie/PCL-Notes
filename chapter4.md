@@ -3,7 +3,7 @@
 为了涵盖能想到的所有可能的情况，PCL中定义了大量的point类型。下面是一小段，在point_types.hpp中有完整目录，这个列表很重要，因为在定义你自己的类型之前，需要了解已有的类型，如果你需要的类型，已经存在于PCL，那么就不需要重复定义了。
 
 * **目录**
-    + [PointXYZ](#)
+    + [PointXYZ](#PointXYZ)
 
 
 * **PointXYZ–成员变量: float x, y, z;**<span id = "PointXYZ">
