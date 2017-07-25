@@ -248,7 +248,8 @@ union
 
 ```
 
-* **PointXYZINormal - float x, y, z, intensity, normal[3], curvature;**
+* **PointXYZINormal - float x, y, z, intensity, normal[3], curvature;**<span id = "PointXYZINormal">
+
 
 PointXYZINormal存储XYZ数据和强度值的point结构体，并且包括曲面法线和曲率。
 
