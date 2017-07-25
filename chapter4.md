@@ -93,4 +93,16 @@ union
 };
 ```
 
+* **PointXY-float x, y;**
+
+简单的二维x-y point结构
+
+```
+struct
+{
+    float x;
+    float y;
+};
+```
+
 
