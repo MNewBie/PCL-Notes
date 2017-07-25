@@ -96,6 +96,9 @@ struct
 };
 ```
 
+* **FPFHSignature33 - float fpfh[33];**
+
+FPFHSignature33包含给定点的FPFH（快速点特征直方图）的简单point类型，查看FPFHEstimation以获得更多信息。
 
 
 
