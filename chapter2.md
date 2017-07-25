@@ -24,13 +24,14 @@ DATA ascii
 
 在点云库（PCL）1.0版本发布之前，PCD文件格式有不同的修订号。这些修订号用PCD\_Vx来编号（例如，PCD\_V5、PCD\_V6、PCD\_V7等等），代表PCD文件的0.x版本号。然而PCL中PCD文件格式的正式发布是0.7版本（PCD\_V7）。
 
-文件头格式
+**文件头格式**
+
 每一个PCD文件包含一个文件头，它确定和声明文件中存储的点云数据的某种特性。PCD文件头必须用ASCII码来编码。PCD文件中指定的每一个文件头字段以及ascii点数据都用一个新行（\n）分开了，从0.7版本开始，PCD文件头包含下面的字段：
 ·VERSION –指定PCD文件版本
 ·FIELDS –指定一个点可以有的每一个维度和字段的名字。例如：
 FIELDS x y z                                   # XYZ data
 FIELDS x y z rgb                          # XYZ + colors
-FIELDS x y z normal_xnormal_y normal_z         # XYZ + surface normals
+FIELDS x y z normal_xnormal\_y normal\_z         # XYZ + surface normals
 FIELDS j1 j2 j3                                # moment invariants
 ...
 ·SIZE –用字节数指定每一个维度的大小。例如：
