@@ -39,7 +39,7 @@ union
 
 ```
 
-* **PointWithViewpoint - float x, y, z, vp_x, vp_y, vp_z;**<span id = "PointWithViewpoint "/>
+* **PointWithViewpoint - float x, y, z, vp_x, vp_y, vp_z;**<span id = "PointWithViewpoint"/>
 
 
 
