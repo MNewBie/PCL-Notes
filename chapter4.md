@@ -80,7 +80,7 @@ union
 
 ```
 
-* **PointXYZRGB - float x, y, z, rgb;** 
+* **PointXYZRGB - float x, y, z, rgb;** <span id = "PointXYZRGB ">
 
 ```
 union
