@@ -8,8 +8,12 @@
     + [Boundary](#Boundary)
     + [PrincipalCurvatures](#PrincipalCurvatures)
     + [BounPFHSignature125dary](#PFHSignature125)
-    + [Boundary](#Boundary)
-    + [Boundary](#Boundary)
+    + [FPFHSignature33](#FPFHSignature33)
+    + [VFHSignature308](#VFHSignature308)
+    + [Narf36](#Narf36)
+    + [VFHSignature308](#VFHSignature308)
+    + [VFHSignature308](#VFHSignature308)
+    + [VFHSignature308](#VFHSignature308)
 
 
 
