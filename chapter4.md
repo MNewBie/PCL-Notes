@@ -15,7 +15,7 @@
     + [PointXYZINormal](#PointXYZINormal)
     
 
-* **PointXYZ–成员变量: float x, y, z;**<span id = "PointXYZ">
+* **PointXYZ–成员变量: float x, y, z;**<span id = "PointXYZ" />
 
 PointXYZ是使用最常见的一个点数据类型，因为它只包含三维xyz坐标信息，这三个浮点数附加一个浮点数来满足存储对齐，用户可利用points[i].data[0]，或者points[i].x访问点的x坐标值。
 
