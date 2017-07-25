@@ -184,11 +184,11 @@ union
 };
 union
 {
-struct
-{
-float curvature;
-};
-float data_c[4];
+    struct
+    {
+        float curvature;
+    };
+    float data_c[4];
 };
 
 ```
