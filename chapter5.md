@@ -2,7 +2,7 @@
 
 * **目录**
     + [PointWithRange](#PointWithRange)
-    + [PointWithRange](#PointWithRange)
+    + [PointWithViewpoint](#PointWithViewpoint)
     + [PointWithRange](#PointWithRange)
     + [PointWithRange](#PointWithRange)
     + [PointWithRange](#PointWithRange)
@@ -41,8 +41,6 @@ union
 
 * **PointWithViewpoint - float x, y, z, vp_x, vp_y, vp_z;**<span id = "PointWithViewpoint"/>
 
-
-
 ointWithViewpoint除了vp_x、vp_y和vp_z以三维点表示所获得的视点之外，其它与PointXYZI一样。
 
 ```
@@ -69,7 +67,7 @@ union
 
 ```
 
-* **MomentInvariants - float j1, j2, j3;**
+* **MomentInvariants - float j1, j2, j3;**<span id = "MomentInvariants"/>
 
 MomentInvariants是一个包含采样曲面上面片的三个不变矩的point类型，描述面片上质量的分布情况。查看MomentInvariantsEstimation以获得更多信息。
 
