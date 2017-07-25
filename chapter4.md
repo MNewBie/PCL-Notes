@@ -156,6 +156,42 @@ union
 };
 ```
 
+* **PointNormal - float x, y, z; float normal[3], curvature;**
+
+PointNormal是存储XYZ数据的point结构体，并且包括采样点对应法线和曲率。
+
+```
+union
+{
+    float data[4];
+    struct
+    {
+        float x;
+        float y;
+        float z;
+    };
+};
+union
+{
+    float data_n[4];
+    float normal[3];
+    struct
+    {
+        float normal_x;
+        float normal_y;
+        float normal_z;
+    };
+};
+union
+{
+struct
+{
+float curvature;
+};
+float data_c[4];
+};
+
+```
 
 
 
