@@ -51,7 +51,7 @@ int main()
 
 **注意：** 搜索结果默认是按照距离point点的距离从近到远排序；如果InputCloud中含有point点，搜索结果的的第一个点是point本身。
 
-* **pcl::KdTreeFLANN\<PointT\>**
+* **pcl::KdTreeFLANN &lt; PointT &gt;**
 
 `pcl::KdTreeFLANN<PointT>`是`pcl::KdTree<PointT>`的子类，可以实现同样的功能。
 
