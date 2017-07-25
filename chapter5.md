@@ -118,6 +118,18 @@ struct
 };
 ```
 
+* **Narf36 - float x, y, z, roll, pitch, yaw; float descriptor[36];**
+
+Narf36包含给定点NARF（归一化对齐半径特征）的简单point类型，查看NARFEstimation以获得更多信息。
+
+```
+struct
+{
+    float x,y,z,roll,pitch,yaw;
+    float descriptor[36];
+};
+```
+
 
 
 
