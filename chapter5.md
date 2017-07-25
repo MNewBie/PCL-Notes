@@ -1,5 +1,31 @@
 # 可用Point类型(下)
 
+* **PointWithRange - float x, y, z (union with float point[4]), range;**
+
+PointWithRange除了range包含从所获得的视点到采样点的距离测量值之外，其它与PointXYZI类似。
+
+```
+union
+{
+    float data[4];
+    struct
+    {
+        float x;
+        float y;
+        float z;
+    };
+};
+union
+{
+    struct
+    {
+        float range;
+    };
+    float data_c[4];
+};
+
+```
+
 * **PointWithViewpoint - float x, y, z, vp_x, vp_y, vp_z;**
 
 ointWithViewpoint除了vp_x、vp_y和vp_z以三维点表示所获得的视点之外，其它与PointXYZI一样。
