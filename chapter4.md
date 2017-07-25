@@ -8,6 +8,12 @@
     + [PointXYZRGBA](#PointXYZRGBA)
     + [PointXYZRGB ](#PointXYZRGB )
     + [PointXY](#PointXY)
+    + [InterestPoint](#InterestPoint)
+    + [PointXY](#PointXY)
+    + [PointXY](#PointXY)
+
+
+
 
 * **PointXYZ–成员变量: float x, y, z;**<span id = "PointXYZ">
 
