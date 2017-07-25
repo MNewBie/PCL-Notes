@@ -42,8 +42,8 @@ int main(int argc, char** argv)
 #include <pcl/io/ply_io.h>
 
 pcl::PolygonMesh mesh;
-pcl::io::loadPLYFile(argv[1],mesh);
-pcl::io::savePLYFile("result.ply", mesh);
+	pcl::io::loadPLYFile("readName.ply", mesh);
+	pcl::io::savePLYFile("saveName.ply", mesh);
 
 ```
 
