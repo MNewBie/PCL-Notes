@@ -190,8 +190,9 @@ union
     };
     float data_c[4];
 };
-
 ```
+
+* **PointXYZRGBNormal - float x, y, z, rgb, normal[3], curvature;**
 
 
 
