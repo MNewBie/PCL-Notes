@@ -4,7 +4,7 @@ k-d树（k-dimensional树的简称），是一种分割k维数据空间的数据
 
 索引结构中相似性查询有两种基本的方式：一种是范围查询（range searches），另一种是K近邻查询（K-neighbor searches）。范围查询就是给定查询点和查询距离的阈值，从数据集中找出所有与查询点距离小于阈值的数据；K近邻查询是给定查询点及正整数K，从数据集中找到距离查询点最近的K个数据，当K=1时，就是最近邻查询（nearest neighbor searches）。
 
-PCL中类`pcl::KdTree<PointT>`是kd-tree数据结构的实现。并且提供基于FLANN进行快速搜索的一些相关子类与包装类。
+PCL中类`pcl::KdTree<PointT>`是kd-tree数据结构的实现。并且提供基于FLANN进行快速搜索的一些相关子类与包装类。具体可以参考相应的API。
 
 * **pcl::search::KdTree<PointT>**
 
