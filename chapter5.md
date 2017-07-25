@@ -13,10 +13,10 @@
     + [Narf36](#Narf36)
     + [BorderDescription](#BorderDescription)
     + [IntensityGradient](#IntensityGradient)
-    + [VFHSignature308](#VFHSignature308)
-
-
-
+    + [Histogram](#Histogram)
+    + [PointWithScale](#PointWithScale)
+    + [PointSurfel](#PointSurfel)
+    
 
 * **PointWithRange - float x, y, z (union with float point[4]), range;**<span id = "PointWithRange"/>
 
