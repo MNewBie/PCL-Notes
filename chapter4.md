@@ -9,7 +9,7 @@
     + [PointXYZRGB ](#PointXYZRGB )
     + [PointXY](#PointXY)
     + [InterestPoint](#InterestPoint)
-    + [PointXY](#PointXY)
+    + [Normal ](#PointXY)
     + [PointXY](#PointXY)
 
 
