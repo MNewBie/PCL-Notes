@@ -105,4 +105,28 @@ struct
 };
 ```
 
+* **InterestPoint-float x, y, z, strength;**
+
+除了strength表示关键点的强度的测量值，其它的和PointXYZI类似。
+
+```
+union
+{
+    float data[4];
+    struct
+    {
+        float x;
+        float y;
+        float z;
+    };
+};
+union
+{
+    struct
+    {
+        float strength;
+    };
+    float data_c[4];
+};
+```
 
