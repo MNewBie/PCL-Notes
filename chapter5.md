@@ -206,7 +206,7 @@ struct
 };
 ```
 
-* **Histogram - float histogram[N];**
+* **Histogram - float histogram[N];**<span id = "Histogram"/>
 
 Histogram用来存储一般用途的n维直方图。
 
@@ -218,7 +218,7 @@ struct Histogram
 };
 ```
 
-* **PointWithScale - float x, y, z, scale;**
+* **PointWithScale - float x, y, z, scale;**<span id = "PointWithScale"/>
 
 PointWithScale除了scale表示某点用于几何操作的尺度（例如，计算最近邻所用的球体半径，窗口尺寸等等），其它的和PointXYZI一样。
 
