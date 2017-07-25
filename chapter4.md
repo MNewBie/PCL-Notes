@@ -56,9 +56,6 @@ union
 * **PointXYZRGBA–成员变量: float x, y, z; uint32_t rgba;**<span id = "PointXYZRGBA">
 
 
-
-
-
 除了rgba信息被包含在一个整型变量中，其它的和PointXYZI类似。
 
 ```
