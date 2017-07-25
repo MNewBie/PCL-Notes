@@ -11,8 +11,8 @@
     + [FPFHSignature33](#FPFHSignature33)
     + [VFHSignature308](#VFHSignature308)
     + [Narf36](#Narf36)
-    + [VFHSignature308](#VFHSignature308)
-    + [VFHSignature308](#VFHSignature308)
+    + [BorderDescription](#BorderDescription)
+    + [IntensityGradient](#IntensityGradient)
     + [VFHSignature308](#VFHSignature308)
 
 
