@@ -360,8 +360,6 @@ struct
 
 PrincipalCurvatures包含给定点主曲率的简单point类型。查看PrincipalCurvaturesEstimation以获得更多信息。
 
-
-
 ```
 struct
 {
