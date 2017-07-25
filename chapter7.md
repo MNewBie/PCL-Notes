@@ -255,6 +255,41 @@ int main(int argc, char** argv)
 }
 ```
 
+	+ 显示区域分割
+
+pcl可以将显示区域分割，从(xmin,ymin)到(xmax,ymax)一个矩形区域，范围是（0，1）。左下角(0,0)，右上角(1,1)。之前所有的函数都支持区域显示。
+
+```
+#include <pcl/io/pcd_io.h>
+#include <pcl/point_types.h>
+// 包含相关头文件
+#include <pcl/visualization/pcl_visualizer.h>
+
+typedef pcl::PointXYZ PointT;
+
+int main()
+{
+	// 读取点云
+	pcl::PointCloud<PointT>::Ptr cloud1(new pcl::PointCloud<PointT>);
+	pcl::io::loadPCDFile("read1.pcd", *cloud1);
+
+	// 定义对象
+	pcl::visualization::PCLVisualizer viewer; 
+
+	int v1(1); // viewport
+	viewer.createViewPort(0.0, 0.0, 0.5, 1.0, v1);
+	viewer.setBackgroundColor(255, 0, 0, v1);
+
+	int v2(2);// viewport
+	viewer.createViewPort(0.5, 0.0, 1.0, 1.0, v1);
+	viewer.setBackgroundColor(0, 255, 0, v2);
+
+	viewer.spin();
+
+	system("pause");
+	return 0;
+}
+```
 
 
 
