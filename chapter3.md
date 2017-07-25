@@ -28,7 +28,7 @@ int main(int argc, char** argv)
 	// 保存点云文件
 	pcl::io::savePCDFile("saveName.pcd", *cloud);
 
-	system("pause"); // windows命令行暂停
+	system("pause"); // windows命令行窗口暂停
 	return (0);
 }
 
