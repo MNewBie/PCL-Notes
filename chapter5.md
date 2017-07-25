@@ -103,7 +103,8 @@ struct
 };
 ```
 
-* **PrincipalCurvatures - float principal_curvature[3], pc1, pc2;**
+* **PrincipalCurvatures - float principal_curvature[3], pc1, pc2;**<span id = "PrincipalCurvatures"/>
+
 
 PrincipalCurvatures包含给定点主曲率的简单point类型。查看PrincipalCurvaturesEstimation以获得更多信息。
 
