@@ -19,3 +19,5 @@ union
 };
 ```
 
+* **PointXYZI–成员变量: float x, y, z, intensity;**
+
