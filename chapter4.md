@@ -321,6 +321,19 @@ union
 
 ```
 
+* **MomentInvariants - float j1, j2, j3;**
+
+MomentInvariants是一个包含采样曲面上面片的三个不变矩的point类型，描述面片上质量的分布情况。查看MomentInvariantsEstimation以获得更多信息。
+
+```
+struct
+{
+    float j1,j2,j3;
+};
+
+```
+
+
 
 
 
