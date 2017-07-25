@@ -335,6 +335,17 @@ struct
 
 * **PrincipalRadiiRSD - float r_min, r_max;**
 
+PrincipalRadiiRSD是一个包含曲面块上两个RSD半径的point类型，查看RSDEstimation以获得更多信息。
+
+```
+struct
+{
+    float r_min,r_max;
+};
+
+```
+
+
 
 
 
