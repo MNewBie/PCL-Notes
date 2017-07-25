@@ -19,4 +19,8 @@
     [中文论坛](http://www.pclcn.org/)
     
     [英文论坛](http://www.pcl-users.org/)
+    
+* **参考书籍**
+
+    点云库PCL学习教程，朱德海，北京航空航天大学出版社
 
