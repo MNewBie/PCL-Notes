@@ -1,6 +1,6 @@
 # PCD（点云数据）文件格式
 
-* **pcd数据举例**
+* **pcd文件数据举例**
 
 ```
 # .PCD v.7 - Point Cloud Data file format
