@@ -142,10 +142,25 @@ struct
 };
 ```
 
+* **IntensityGradient - float gradient[3];**
 
+IntensityGradient包含给定点强度的梯度point类型，查看IntensityGradientEstimation以获得更多信息。
 
-
-
+```
+struct
+{
+    union
+    {
+        float gradient[3];
+        struct
+        {
+            float gradient_x;
+            float gradient_y;
+            float gradient_z;
+        };
+    };
+};
+```
 
 
 
