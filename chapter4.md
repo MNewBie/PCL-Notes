@@ -172,7 +172,8 @@ union
 };
 ```
 
-* **PointNormal - float x, y, z; float normal[3], curvature;**
+* **PointNormal - float x, y, z; float normal[3], curvature;**<span id = "PointNormal ">
+
 
 PointNormal是存储XYZ数据的point结构体，并且包括采样点对应法线和曲率。
 
