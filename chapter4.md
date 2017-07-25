@@ -293,6 +293,34 @@ union
 
 ```
 
+* **PointWithViewpoint - float x, y, z, vp_x, vp_y, vp_z;**
+
+ointWithViewpoint除了vp_x、vp_y和vp_z以三维点表示所获得的视点之外，其它与PointXYZI一样。
+
+```
+union
+{
+    float data[4];
+    struct
+    {
+        float x;
+        float y;
+        float z;
+    };
+};
+union
+{
+    struct
+    {
+        float vp_x;
+        float vp_y;
+        float vp_z;
+    };
+    float data_c[4];
+};
+
+```
+
 
 
 
