@@ -270,8 +270,8 @@ typedef pcl::PointXYZ PointT;
 int main()
 {
 	// 读取点云
-	pcl::PointCloud<PointT>::Ptr cloud1(new pcl::PointCloud<PointT>);
-	pcl::io::loadPCDFile("read1.pcd", *cloud1);
+	pcl::PointCloud<PointT>::Ptr cloud(new pcl::PointCloud<PointT>);
+	pcl::io::loadPCDFile("read.pcd", *cloud);
 
 	// 定义对象
 	pcl::visualization::PCLVisualizer viewer; 
@@ -279,10 +279,12 @@ int main()
 	int v1(1); // viewport
 	viewer.createViewPort(0.0, 0.0, 0.5, 1.0, v1);
 	viewer.setBackgroundColor(255, 0, 0, v1);
+	viewer.addPointCloud(cloud, "cloud1", v1);;
 
 	int v2(2);// viewport
 	viewer.createViewPort(0.5, 0.0, 1.0, 1.0, v1);
 	viewer.setBackgroundColor(0, 255, 0, v2);
+	viewer.addPointCloud(cloud, "cloud2", v2);;
 
 	viewer.spin();
 
@@ -291,5 +293,32 @@ int main()
 }
 ```
 
+* **pcl::visualization::CloudViewer**
+
+```
+#include <pcl/io/pcd_io.h>
+#include <pcl/point_types.h>
+// 包含相关头文件
+#include <pcl/visualization/cloud_viewer.h>
+
+typedef pcl::PointXYZ PointT;
+
+int main()
+{
+	// 读取点云
+	pcl::PointCloud<PointT>::Ptr cloud(new pcl::PointCloud<PointT>);
+	pcl::io::loadPCDFile("read.pcd", *cloud);
+
+	pcl::visualization::CloudViewer viewer("simple cloud viewer");
+	viewer.showCloud(cloud);
+	while (!viewer.wasStopped())
+	{
+		// todo::
+	}
+
+	system("pause");
+	return 0;
+}
+```
 
 
