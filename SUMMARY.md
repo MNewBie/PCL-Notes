@@ -7,4 +7,5 @@
 * [可用Point类型\(上\)](chapter4.md)
 * [可用Point类型\(下\)](chapter5.md)
 * [利用KDTree近邻搜索](chapter6.md)
+* [点云可视化](chapter7.md)
 
