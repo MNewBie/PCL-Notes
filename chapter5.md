@@ -239,7 +239,7 @@ struct
 };
 ```
 
-* **PointSurfel - float x, y, z, normal[3], rgba, radius, confidence, curvature;**
+* **PointSurfel - float x, y, z, normal[3], rgba, radius, confidence, curvature;**<span id = "PointSurfel"/>
 
 PointSurfel存储XYZ坐标、曲面法线、RGB信息、半径、可信度和曲面曲率的复杂point类型。
 
