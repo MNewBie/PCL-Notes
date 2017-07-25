@@ -105,7 +105,6 @@ struct
 
 * **PrincipalCurvatures - float principal_curvature[3], pc1, pc2;**<span id = "PrincipalCurvatures"/>
 
-
 PrincipalCurvatures包含给定点主曲率的简单point类型。查看PrincipalCurvaturesEstimation以获得更多信息。
 
 ```
@@ -126,7 +125,7 @@ struct
 };
 ```
 
-* **PFHSignature125 - float pfh[125];**
+* **PFHSignature125 - float pfh[125];**<span id = "PFHSignature125"/>
 
 PFHSignature125包含给定点的PFH（点特征直方图）的简单point类型,查看PFHEstimation以获得更多信息。
 
