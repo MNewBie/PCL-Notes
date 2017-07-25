@@ -70,4 +70,29 @@ union
 
 ```
 
+* **PointXYZRGB - float x, y, z, rgb;** 
+
+
+
+```
+union
+{
+    float data[4];
+    struct
+    {
+        float x;
+        float y;
+        float z;
+    };
+};
+union
+{
+    struct
+    {
+        float rgb;
+    };
+    float data_c[4];
+};
+```
+
 
