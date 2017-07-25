@@ -48,3 +48,5 @@ int main()
 	return 0;
 }
 ```
+
+**注意：** 搜索结果默认是按照距离point点的距离从近到远排序；如果InputCloud中含有point点，搜索结果的的第一个点是point本身。
