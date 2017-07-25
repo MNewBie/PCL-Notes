@@ -16,7 +16,7 @@ int main(int argc, char** argv)
 	pcl::PointCloud<PointT>::Ptr cloud(new pcl::PointCloud<PointT>);
 
 	// 读取点云，失败返回-1
-	if (pcl::io::loadPCDFile<PointT>("read.pcd", *cloud) == -1)
+	if (pcl::io::loadPCDFile<PointT>("readName.pcd", *cloud) == -1)
 	{
 		PCL_ERROR("couldn't read file\n");
 		return (-1);
