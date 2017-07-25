@@ -3,7 +3,7 @@
 * **目录**
     + [PointWithRange](#PointWithRange)
     + [PointWithViewpoint](#PointWithViewpoint)
-    + [PointWithRange](#PointWithRange)
+    + [MomentInvariants](#MomentInvariants)
     + [PointWithRange](#PointWithRange)
     + [PointWithRange](#PointWithRange)
 
