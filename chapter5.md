@@ -170,7 +170,7 @@ struct
 };
 ```
 
-* **BorderDescription - int x, y; BorderTraits traits;**
+* **BorderDescription - int x, y; BorderTraits traits;**<span id = "BorderDescription"/>
 
 BorderDescription包含给定点边界类型的简单point类型，看BorderEstimation以获得更多信息。
 
@@ -182,7 +182,7 @@ struct
 };
 ```
 
-* **IntensityGradient - float gradient[3];**
+* **IntensityGradient - float gradient[3];**<span id = "IntensityGradient"/>
 
 IntensityGradient包含给定点强度的梯度point类型，查看IntensityGradientEstimation以获得更多信息。
 
