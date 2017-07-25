@@ -162,6 +162,17 @@ struct
 };
 ```
 
+* **Histogram - float histogram[N];**
+
+Histogram用来存储一般用途的n维直方图。
+
+```
+template<int N>
+struct Histogram
+{
+    float histogram[N];
+};
+```
 
 
 
