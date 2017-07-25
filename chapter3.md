@@ -36,5 +36,9 @@ int main(int argc, char** argv)
 
 * **读取与保存PLY文件**
 
+后缀命名为.ply格式文件，常用的点云数据文件。ply文件不仅可以存储点数据，而且可以存储网格数据. 用编辑器打开一个ply文件，观察表头，如果表头element face的值为0,则表示该文件为点云文件，如果element face的值为某一正整数N，则表示该文件为网格文件，且包含N个网格.
+所以利用pcl读取 ply 文件，不能一味用pcl::PointCloud<PointT>::Ptr cloud (new pcl::PointCloud<PintT>)来读取。
+在读取ply文件时候，首先要分清该文件是点云还是网格类文件。如果是点云文件，则按照一般的点云类去读取即可，官网例子,就是这样。
+如果ply文件是网格类，则需要
 
 
