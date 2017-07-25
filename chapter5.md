@@ -5,10 +5,11 @@
     + [PointWithViewpoint](#PointWithViewpoint)
     + [MomentInvariants](#MomentInvariants)
     + [PrincipalRadiiRSD](#PrincipalRadiiRSD)
-    + [PointWithRange](#PointWithRange)
-
-
-
+    + [Boundary](#Boundary)
+    + [PrincipalCurvatures](#PrincipalCurvatures)
+    + [Boundary](#Boundary)
+    + [Boundary](#Boundary)
+    + [Boundary](#Boundary)
 
 
 
