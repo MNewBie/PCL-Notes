@@ -130,7 +130,17 @@ struct
 };
 ```
 
+* **BorderDescription - int x, y; BorderTraits traits;**
 
+BorderDescription包含给定点边界类型的简单point类型，看BorderEstimation以获得更多信息。
+
+```
+struct
+{
+    int x,y;
+    BorderTraitstraits;
+};
+```
 
 
 
