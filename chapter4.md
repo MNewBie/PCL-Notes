@@ -283,31 +283,7 @@ union
 };
 ```
 
-* **PointWithRange - float x, y, z (union with float point[4]), range;**
 
-PointWithRange除了range包含从所获得的视点到采样点的距离测量值之外，其它与PointXYZI类似。
-
-```
-union
-{
-    float data[4];
-    struct
-    {
-        float x;
-        float y;
-        float z;
-    };
-};
-union
-{
-    struct
-    {
-        float range;
-    };
-    float data_c[4];
-};
-
-```
 
 
 
