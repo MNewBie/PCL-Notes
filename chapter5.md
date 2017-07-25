@@ -111,6 +111,15 @@ struct
 
 VFHSignature308包含给定点VFH（视点特征直方图）的简单point类型，查看VFHEstimation以获得更多信息。
 
+```
+struct
+{
+    float histogram[308];
+};
+```
+
+
+
 
 
 
