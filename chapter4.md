@@ -230,6 +230,44 @@ union
 
 ```
 
+* **PointXYZINormal - float x, y, z, intensity, normal[3], curvature;**
+
+PointXYZINormal存储XYZ数据和强度值的point结构体，并且包括曲面法线和曲率。
+
+```
+union
+{
+    float data[4];
+    struct
+    {
+        float x;
+        float y;
+        float z;
+    };
+};
+union
+{
+    float data_n[4];
+    float normal[3];
+    struct
+    {
+        float normal_x;
+        float normal_y;
+        float normal_z;
+    };
+}
+union
+{
+    struct
+    {
+        float intensity;
+        float curvature;
+    };
+    float data_c[4];
+};
+```
+
+
 
 
 
