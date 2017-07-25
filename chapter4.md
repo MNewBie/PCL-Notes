@@ -44,3 +44,32 @@ union
 };
 ```
 
+* **PointXYZRGBA–成员变量: float x, y, z; uint32_t rgba;**
+
+除了rgba信息被包含在一个整型变量中，其它的和PointXYZI类似。
+
+
+
+```
+union
+{
+    float data[4];
+    struct
+    {
+        float x;
+        float y;
+        float z;
+    };
+};
+union
+{
+    struct
+    {
+        uint32_t rgba;
+    };
+    float data_c[4];
+};
+
+```
+
+
