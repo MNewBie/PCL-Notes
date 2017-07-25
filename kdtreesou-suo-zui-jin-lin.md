@@ -6,7 +6,7 @@ k-d树（k-dimensional树的简称），是一种分割k维数据空间的数据
 
 PCL中类`pcl::KdTree<PointT>`是kd-tree数据结构的实现。并且提供基于FLANN进行快速搜索的一些相关子类与包装类。具体可以参考相应的API。
 
-* **pcl::search::KdTree\\<PointT>**
+* **pcl::search::KdTree&lt;PointT>**
 
 `pcl::search::KdTree<PointT>`是`pcl::search::Search< PointT >`的子类，是`pcl::KdTree<PointT>`的包装类。包含(1) k 近邻搜索；(2) 邻域半径搜索。
 
