@@ -136,7 +136,7 @@ struct
 };
 ```
 
-* **FPFHSignature33 - float fpfh[33];**
+* **FPFHSignature33 - float fpfh[33];**<span id = "FPFHSignature33"/>
 
 FPFHSignature33包含给定点的FPFH（快速点特征直方图）的简单point类型，查看FPFHEstimation以获得更多信息。
 
@@ -147,7 +147,7 @@ struct
 };
 ```
 
-* **VFHSignature308 - float vfh[308];**
+* **VFHSignature308 - float vfh[308];**<span id = "VFHSignature308"/>
 
 VFHSignature308包含给定点VFH（视点特征直方图）的简单point类型，查看VFHEstimation以获得更多信息。
 
