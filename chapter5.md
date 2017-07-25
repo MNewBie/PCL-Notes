@@ -85,6 +85,19 @@ struct
 };
 ```
 
+* **PFHSignature125 - float pfh[125];**
+
+PFHSignature125包含给定点的PFH（点特征直方图）的简单point类型,查看PFHEstimation以获得更多信息。
+
+```
+struct
+{
+    float histogram[125];
+};
+```
+
+
+
 
 
 
