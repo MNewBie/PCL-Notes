@@ -34,5 +34,5 @@ int main(int argc, char** argv)
 
 ```
 
-* **从PCD文件中读取与保存点云文件**
+* **读取与保存PLY文件**
 
