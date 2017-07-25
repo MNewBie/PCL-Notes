@@ -10,10 +10,10 @@
     + [PointXY](#PointXY)
     + [InterestPoint](#InterestPoint)
     + [Normal](#Normal)
-    + [PointXY](#PointXY)
-
-
-
+    + [PointNormal](#PointNormal)
+    + [PointXYZRGBNormal](#PointXYZRGBNormal)
+    + [PointXYZINormal](#PointXYZINormal)
+    
 
 * **PointXYZ–成员变量: float x, y, z;**<span id = "PointXYZ">
 
