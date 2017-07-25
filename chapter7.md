@@ -75,5 +75,62 @@ int main()
 **高级功能：**设置回掉函数进行交互、设置显示区域
 
 	+ 按键事件
+```
+#include <pcl/io/pcd_io.h>
+#include <pcl/visualization/pcl_visualizer.h>
+
+// 回掉函数所用数据结构
+struct callback_args {
+	bool *isShow;
+	pcl::PointCloud<pcl::PointXYZ>::Ptr orgin_points;
+	pcl::visualization::PCLVisualizer::Ptr viewerPtr;
+};
+
+// 按键事件回掉函数
+void kb_callback(const pcl::visualization::KeyboardEvent& event, void* args)
+{
+	if (event.keyDown() && event.getKeyCode() == 'a')
+	{
+		std::cout << "a has pressed" << std::endl;
+		struct callback_args* data = (struct callback_args *)args;
+		if (*(data->isShow))
+		{
+			data->viewerPtr->removePointCloud("cloud");
+			*(data->isShow) = false;
+			std::cout << "remove" << std::endl;
+		}
+		else {
+			data->viewerPtr->addPointCloud(data->orgin_points, "cloud");
+			*(data->isShow) = true;
+			std::cout << "add" << std::endl;
+		}
+	}
+}
+
+int main(int argc, char** argv)
+{
+	pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
+	pcl::io::loadPCDFile("rabbit.pcd", *cloud);
+	pcl::console::print_highlight("load cloud !\n");
+
+	// 定义对象
+	pcl::visualization::PCLVisualizer::Ptr viewer(new pcl::visualization::PCLVisualizer);
+	viewer->addPointCloud(cloud, "cloud");
+
+	// 初始化参数
+	bool isShow = true;
+	struct callback_args kb_args;
+	kb_args.isShow = &isShow;
+	kb_args.orgin_points = cloud;
+	kb_args.viewerPtr = viewer;
+
+	// 设置回掉函数
+	viewer->registerKeyboardCallback(kb_callback, (void*)&kb_args);
+
+	viewer->spin();
+
+	return 0;
+}
+```
 
 
