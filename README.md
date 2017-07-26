@@ -23,4 +23,8 @@
 * **参考书籍**
 
     点云库PCL学习教程，朱德海，北京航空航天大学出版社
+    
+* **本总结在线网址**
+
+<https://www.gitbook.com/book/mnewbie/pcl-notes/details>
 
