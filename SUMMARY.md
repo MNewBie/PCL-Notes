@@ -16,6 +16,7 @@
 * [13.曲面分割与重建](chapter13.md)
 * [附录1：新建项目](appendix1.md)
 * [附录2：常用函数\(1\)](appendix2_1.md)
+* [附录2：常用函数\(2\)](appendix2_2.md)
 * [附录3：Eigen函数表](appendix3.md)
 * [附录4：新建QT界面项目](appendix4.md)
 * [附录5：常用模型库](appendix5.md)
