@@ -46,5 +46,27 @@ int main()
 
 * **SHOTLocalReferenceFrame**
 
-参考文献：
-shot描述子
+参考文献：shot描述子
+
+```
+#include <pcl/io/pcd_io.h>
+#include <pcl/features/shot_lrf.h>
+
+int main()
+{
+	pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
+	pcl::io::loadPCDFile("rabbit.pcd", *cloud);
+	std::cout << "load " << cloud->points.size() << std::endl;
+
+	pcl::SHOTLocalReferenceFrameEstimation<pcl::PointXYZ, pcl::ReferenceFrame>::Ptr lrf_estimator(new pcl::SHOTLocalReferenceFrameEstimation<pcl::PointXYZ, pcl::ReferenceFrame>);
+	lrf_estimator->setRadiusSearch(0.001);
+	lrf_estimator->setInputCloud(cloud);
+	lrf_estimator->setSearchSurface(cloud);
+	pcl::PointCloud<pcl::ReferenceFrame>::Ptr cloud_lrf(new pcl::PointCloud<pcl::ReferenceFrame>);
+	lrf_estimator->compute(*cloud_lrf);
+	std::cout << "compute lrf size: " << cloud_lrf->size() << std::endl;
+
+	system("pause");
+	return 0;
+}
+```
