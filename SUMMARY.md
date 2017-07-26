@@ -17,6 +17,9 @@
 * [附录1：新建项目](appendix1.md)
 * [附录2：工具函数](appendix2.md)
 * [附录3：Eigen函数表](appendix3.md)
+* [附录4：新建QT界面项目](appendix3.md)
+
+
 
 
 
