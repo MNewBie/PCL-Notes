@@ -18,3 +18,5 @@ cout<<time.toc()/1000<<"s"<<endl;
 ```
 
 就可以以秒输出“程序段”的运行时间。
+
+* **pcl::PointCloud::Ptr和pcl::PointCloud的两个类相互转换**
