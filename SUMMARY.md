@@ -16,6 +16,7 @@
 * [13.曲面分割与重建](chapter13.md)
 * [附录1：新建项目](appendix1.md)
 * [附录2：工具函数](appendix2.md)
+* [附录3：Eigen函数表](appendix3.md)
 
 
 
