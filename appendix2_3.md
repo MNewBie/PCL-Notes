@@ -4,6 +4,9 @@
 
 * **BOARDLocalReferenceFrame**
 
+参考文献：
+A. Petrelli, L. Di Stefano, "On the repeatability of the local reference frame for partial shape matching", 13th International Conference on Computer Vision (ICCV), 2011
+
 ```
 #include <pcl/io/pcd_io.h>
 #include <pcl/features/normal_3d.h>
