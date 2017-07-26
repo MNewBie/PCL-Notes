@@ -67,4 +67,4 @@ int main(int argc, char** argv)
 
 相关类用法与PFH类似，只需要引入 `#include <pcl/features/fpfh.h>`;
 将 `typedef pcl::PFHSignature125 FeatureT` 替换为 `typedef pcl::FPFHSignature33 FeatureT`;
-将`pcl::PFHEstimation<PointT, PointNT, FeatureT> fest;` 替换 
+将`pcl::PFHEstimation<PointT, PointNT, FeatureT> fest;` 替换为 `pcl::FPFHEstimation<PointT, PointNT, FeatureT> fest;` 即可。
