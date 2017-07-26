@@ -46,5 +46,3 @@ pcl::io::loadPLYFile("readName.ply", mesh);
 pcl::io::savePLYFile("saveName.ply", mesh);
 
 ```
-
-
