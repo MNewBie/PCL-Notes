@@ -110,7 +110,31 @@ R.row(i) = P.col(j);               // R(i, :) = P(:, i)
 R.col(j1).swap(mat1.col(j2));      // R(:, [j1 j2]) = R(:, [j2, j1])
 ```
 
+* **Eigen 矩阵转置**
 
+```
+// Views, transpose, etc; all read-write except for .adjoint().
+// Eigen                           // Matlab
+R.adjoint()                        // R'
+R.transpose()                      // R.' or conj(R')
+R.diagonal()                       // diag(R)
+x.asDiagonal()                     // diag(x)
+R.transpose().colwise().reverse(); // rot90(R)
+R.conjugate()                      // conj(R)
+```
+
+* **Eigen 矩阵乘积**
+
+```
+// All the same as Matlab, but matlab doesn't have *= style operators.
+// Matrix-vector.  Matrix-matrix.   Matrix-scalar.
+y  = M*x;          R  = P*Q;        R  = P*s;
+a  = b*M;          R  = P - Q;      R  = s*P;
+a *= M;            R  = P + Q;      R  = P/s;
+                   R *= Q;          R  = s*P;
+                   R += Q;          R *= s;
+                   R -= Q;          R /= s;
+```
 
 
 
