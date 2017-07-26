@@ -249,7 +249,3 @@ eig.eigenvalues();                // diag(val)
 eig.eigenvectors();               // vec
 // For self-adjoint matrices use SelfAdjointEigenSolver<>
 ```
-
-
-
-
