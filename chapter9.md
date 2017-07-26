@@ -37,7 +37,7 @@ int main(int argc, char** argv)
 	// 显示
 	pcl::visualization::PCLVisualizer viewer;
 	viewer.addPointCloud(cloud, "cloud");
-	int level = 100; // 多少条法向量显示成一条
+	int level = 100; // 多少条法向量集合显示成一条
 	float scale = 0.01; // 法向量长度
 	viewer.addPointCloudNormals<PointNT>(normals, level, scale, "normals");
 
