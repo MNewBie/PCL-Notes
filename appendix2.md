@@ -130,6 +130,15 @@ int main (int argc,char **argv)
 }
 ```
 
+* **计算质心**
+
+```
+Eigen::Vector4f centroid;  //质心
+pcl::compute3DCentroid(*cloud_smoothed,centroid); //估计质心的坐标
+```
+
+
+
 
 
 
