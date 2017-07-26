@@ -167,6 +167,6 @@ VTK_MODULE_INIT(vtkInteractionStyle);
 
 2、加入pcl出现错误：
 错误：`error C2440: “static_cast”: 无法从“vtkObjectBase *const ”转换为“vtkRenderWindow ”`
-解决：在Qtttttt.cpp文件里添加#include <vtkRenderWindow.h>
+解决：`在Qtttttt.cpp文件里添加#include <vtkRenderWindow.h>`
 
 
