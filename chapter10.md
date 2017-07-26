@@ -48,3 +48,12 @@ int main(int argc, char** argv)
 	return 0;
 }
 ```
+
+* **HarrisKeypoint3D**
+
+HarrisKeypoint3D是对2D的Harris提取关键点算法的一个三维扩展。
+
+
+
+
+
