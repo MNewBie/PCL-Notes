@@ -9,5 +9,9 @@
 * [6.利用KDTree近邻搜索](chapter6.md)
 * [7.点云可视化](chapter7.md)
 * [8.滤波](chapter8.md)
+* [9.表面法线](chapter9.md)
+
+
+
 
 
