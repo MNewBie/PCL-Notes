@@ -20,3 +20,15 @@ cout<<time.toc()/1000<<"s"<<endl;
 就可以以秒输出“程序段”的运行时间。
 
 * **pcl::PointCloud::Ptr和pcl::PointCloud的两个类相互转换**
+
+```
+#include <pcl/io/pcd_io.h>
+#include <pcl/point_types.h>
+#include <pcl/point_cloud.h>
+ 
+pcl::PointCloud<pcl::PointXYZ>::Ptr cloudPointer(new pcl::PointCloud<pcl::PointXYZ>);
+pcl::PointCloud<pcl::PointXYZ> cloud;
+cloud = *cloudPointer;
+cloudPointer = cloud.makeShared();
+```
+
