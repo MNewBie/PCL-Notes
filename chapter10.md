@@ -95,6 +95,65 @@ int main(int argc, char** argv)
 
 SIFTKeypoint是对2D的sift算法的一个扩展。参考：David G. Lowe, "Distinctive image features from scale-invariant keypoints," International Journal of Computer Vision, 60, 2 (2004), pp. 91-110.
 
+```
+#include <pcl/io/pcd_io.h>
+#include <pcl/point_types.h>
+// 包含相关头文件
+#include <pcl/features/normal_3d.h>
+#include <pcl/keypoints/sift_keypoint.h>
+
+#include "resolution.h" // 用于计算模型分辨率
+
+typedef pcl::PointXYZ PointT;
+
+int main(int argc, char** argv)
+{
+	// 读取点云
+	pcl::PointCloud<PointT>::Ptr cloud(new pcl::PointCloud<PointT>);
+	pcl::io::loadPCDFile(argv[1], *cloud);
+	std::cout << "original cloud size : " << cloud->size() << std::endl;
+
+	double resolution = computeCloudResolution(cloud); // 模型分辨率
+
+	// 法向量
+	pcl::NormalEstimation<pcl::PointXYZ, pcl::PointNormal> ne;
+	pcl::PointCloud<pcl::PointNormal>::Ptr cloud_normals(new pcl::PointCloud<pcl::PointNormal>);
+	pcl::search::KdTree<pcl::PointXYZ>::Ptr tree_n(new pcl::search::KdTree<pcl::PointXYZ>());
+	ne.setInputCloud(cloud);
+	ne.setSearchMethod(tree_n);
+	//	ne.setRadiusSearch(10 * resolution);
+	ne.setKSearch(50);
+	ne.compute(*cloud_normals);
+
+	// 拷贝数据
+	for (size_t i = 0; i < cloud_normals->points.size(); ++i)
+	{
+		cloud_normals->points[i].x = cloud->points[i].x;
+		cloud_normals->points[i].y = cloud->points[i].y;
+		cloud_normals->points[i].z = cloud->points[i].z;
+	}
+
+	// sift参数
+	const float min_scale = 0.001f;
+	const int n_octaves = 5; //3
+	const int n_scales_per_octave = 6; //4
+	const float min_contrast = 0.001f;
+
+	// 使用法向量作为强度计算关键点，还可以是rgb、z值或者自定义，具体参看API
+	pcl::SIFTKeypoint<pcl::PointNormal, PointT> sift; //PointT 可以是 pcl::PointWithScale包含尺度信息
+	pcl::PointCloud<PointT> keys;
+	pcl::search::KdTree<pcl::PointNormal>::Ptr tree(new pcl::search::KdTree<pcl::PointNormal>());
+	sift.setSearchMethod(tree);
+	sift.setScales(min_scale, n_octaves, n_scales_per_octave);
+	sift.setMinimumContrast(min_contrast);
+	sift.setInputCloud(cloud_normals);
+	sift.compute(keys);
+	std::cout << "No of SIFT points in the result are " << keys.points.size() << std::endl;
+
+	system("pause");
+	return 0;
+}
+```
 
 
 
