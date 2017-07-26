@@ -171,4 +171,12 @@ VTK_MODULE_INIT(vtkInteractionStyle);
 解决：
 `在Qtttttt.cpp文件里添加#include <vtkRenderWindow.h>`
 
+* **参考文章**
+
+<http://blog.csdn.net/wokaowokaowokao12345/article/details/51314439>
+
+<http://blog.csdn.net/wokaowokaowokao12345/article/details/51096887>
+
+<http://blog.csdn.net/wokaowokaowokao12345/article/details/51078495>
+
 
