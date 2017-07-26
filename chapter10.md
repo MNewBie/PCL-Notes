@@ -5,3 +5,6 @@
 PCL中pcl_keypoints库目前提供几种常用的关键点检测算法，下面给出几种常用算法的实例。
 
 * **ISSKeypoint3D**
+
+参考文献：
+Yu Zhong, “Intrinsic shape signatures: A shape descriptor for 3D object recognition,”Computer Vision Workshops (ICCV Workshops), 2009 IEEE 12th International Conference on ,vol., no., pp.689-696, Sept. 27 2009-Oct. 4 2009
