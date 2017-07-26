@@ -60,3 +60,85 @@ std::vector<int > indexs = { 1, 2, 5 };
 pcl::copyPointCloud(*cloud, indexs, *cloudOut);
 ```
 
+* **如何从点云里删除和添加点**
+
+```
+#include <pcl/io/pcd_io.h>
+#include <pcl/common/impl/io.hpp>
+#include <pcl/point_types.h>
+#include <pcl/point_cloud.h>
+ 
+pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
+pcl::io::loadPCDFile<pcl::PointXYZ>("C:\office3-after21111.pcd", *cloud);
+pcl::PointCloud<pcl::PointXYZ>::iterator index = cloud->begin();
+cloud->erase(index);//删除第一个
+index = cloud->begin() + 5;
+cloud->erase(cloud->begin());//删除第5个
+pcl::PointXYZ point = { 1, 1, 1 };
+//在索引号为5的位置1上插入一点，原来的点后移一位
+cloud->insert(cloud->begin() + 5, point);
+cloud->push_back(point);//从点云最后面插入一点
+std::cout << cloud->points[5].x;//输出1
+```
+
+* **链接两个点云字段（两点云大小必须相同）**
+
+```
+pcl::PointCloud<pcl::PointXYZ>::Ptr cloud (new pcl::PointCloud<pcl::PointXYZ>);
+pcl::io::loadPCDFile("/home/yxg/pcl/pcd/mid.pcd",*cloud);
+pcl::NormalEstimation<pcl::PointXYZ,pcl::Normal> ne;
+ne.setInputCloud(cloud);
+pcl::search::KdTree<pcl::PointXYZ>::Ptr tree (new pcl::search::KdTree<pcl::PointXYZ>());
+ne.setSearchMethod(tree);
+pcl::PointCloud<pcl::Normal>::Ptr cloud_normals(new pcl::PointCloud<pcl::Normal>()); 
+ne.setKSearch(8);
+ //ne.setRadisuSearch(0.3);
+ne.compute(*cloud_normals);    
+pcl::PointCloud<pcl::PointNormal>::Ptr cloud_with_nomal (new pcl::PointCloud<pcl::PointNormal>);
+pcl::concatenateFields(*cloud,*cloud_normals,*cloud_with_nomal);
+```
+
+* **如何从点云中删除无效点**
+
+pcl中的无效点是指：点的某一坐标值为nan.
+
+```
+#include <pcl/point_cloud.h>
+#include <pcl/point_types.h>
+#include <pcl/filters/filter.h>
+#include <pcl/io/pcd_io.h>
+    
+using namespace std;
+typedef pcl::PointXYZRGBA point;
+typedef pcl::PointCloud<point> CloudType;
+    
+int main (int argc,char **argv)
+{
+  CloudType::Ptr cloud (new CloudType);
+  CloudType::Ptr output (new CloudType);
+              
+  pcl::io::loadPCDFile(argv[1],*cloud);
+  cout<<"size is:"<<cloud->size()<<endl;
+                     
+  vector<int> indices;
+  pcl::removeNaNFromPointCloud(*cloud,*output,indices);
+  cout<<"output size:"<<output->size()<<endl;
+             
+  pcl::io::savePCDFile("out.pcd",*output);
+    
+  return 0;
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
