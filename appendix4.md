@@ -94,7 +94,7 @@ Qtttttt::Qtttttt(QWidget *parent)
 	// -------------------------------------------
 }
 
-// ----------------- 添加
+// ----------------- 添加-----------------
 void Qtttttt::initialVtkWidget()
 {
 	cloud.reset(new pcl::PointCloud<pcl::PointXYZ>);
@@ -105,7 +105,6 @@ void Qtttttt::initialVtkWidget()
 	viewer->setupInteractor(ui.qvtkWidget->GetInteractor(), ui.qvtkWidget->GetRenderWindow());
 	ui.qvtkWidget->update();
 }
-
 
 //读取文本型和二进制型点云数据
 void Qtttttt::onOpen()
