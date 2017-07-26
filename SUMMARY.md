@@ -20,4 +20,5 @@
 * [附录3：Eigen函数表](appendix3.md)
 * [附录4：新建QT界面项目](appendix4.md)
 * [附录5：常用模型库](appendix5.md)
+* [附录2：常用函数\(3\)](appendix2_3.md)
 
