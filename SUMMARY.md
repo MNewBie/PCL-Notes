@@ -18,6 +18,15 @@
 * [附录2：工具函数](appendix2.md)
 * [附录3：Eigen函数表](appendix3.md)
 * [附录4：新建QT界面项目](appendix4.md)
+* [附录5：常用模型库](appendix5.md)
+
+
+
+
+
+
+
+
 
 
 
