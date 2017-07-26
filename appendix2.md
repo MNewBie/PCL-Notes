@@ -137,6 +137,30 @@ Eigen::Vector4f centroid;  //质心
 pcl::compute3DCentroid(*cloud_smoothed,centroid); //估计质心的坐标
 ```
 
+* **从网格提取顶点（将网格转化为点）**
+
+```
+#include <pcl/io/io.h>
+#include <pcl/io/pcd_io.h>
+#include <pcl/io/obj_io.h>
+#include <pcl/PolygonMesh.h>
+#include <pcl/point_cloud.h>
+#include <pcl/io/vtk_lib_io.h>//loadPolygonFileOBJ所属头文件；
+#include <pcl/io/vtk_io.h>
+#include <pcl/io/ply_io.h>
+#include <pcl/point_types.h>
+using namespace pcl;
+int main(int argc,char **argv)
+{
+   pcl::PolygonMesh mesh;
+  //   pcl::io::loadPolygonFileOBJ(argv[1], mesh);
+  pcl::io::loadPLYFile(argv[1],mesh);
+  pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new     pcl::PointCloud<pcl::PointXYZ>);
+  pcl::fromPCLPointCloud2(mesh.cloud, *cloud);
+  pcl::io::savePCDFileASCII("result.pcd", *cloud);
+  return 0;
+}
+```
 
 
 
