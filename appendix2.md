@@ -165,9 +165,6 @@ int main(int argc,char **argv)
 以上代码可以从.obj或.ply面片格式转化为点云类型。
 
 
----
-以上
-
 
 
 
