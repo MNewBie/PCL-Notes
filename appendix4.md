@@ -15,3 +15,4 @@
 属性中可以看到默认名字为qvtkWidget
 
 ![](/images/qt_3.png)
+
