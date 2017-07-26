@@ -4,4 +4,4 @@
 
 * 1、新建QT GUI项目，原生QT或者VS插件建立都可以。
 
-* 2、用Qt Designer打开.ui文件
+* 2、用Qt Designer打开.ui文件，
