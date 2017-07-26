@@ -10,6 +10,13 @@
 * [7.点云可视化](chapter7.md)
 * [8.滤波](chapter8.md)
 * [9.表面法线](chapter9.md)
+* [9.关键点](chapter10.md)
+
+
+
+
+
+
 
 
 
