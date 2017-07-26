@@ -152,3 +152,18 @@ void Qtttttt::onOpen()
 ![](/images/qt_4.png)
 
 点击open弹出文件选择框，可以将选择的pcd文件显示出来，由于路径没做处理，中文路径可能会出问题。
+
+* **注意：**
+
+>1、运行vtk出现错误：
+	错误：Error:no override found for ‘vtkRenderWindow’.
+	解决：在第一次使用vtk的头文件最前添加下面代码。
+			#include <vtkAutoInit.h> 
+			VTK_MODULE_INIT(vtkRenderingOpenGL2);
+			VTK_MODULE_INIT(vtkInteractionStyle);
+
+>2、加入pcl出现错误：
+	错误：error C2440: “static_cast”: 无法从“vtkObjectBase *const ”转换为“vtkRenderWindow *
+	解决：在Qtttttt.cpp文件里添加#include <vtkRenderWindow.h>
+
+
