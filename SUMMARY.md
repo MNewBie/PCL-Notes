@@ -11,6 +11,19 @@
 * [8.滤波](chapter8.md)
 * [9.表面法线](chapter9.md)
 * [10.关键点](chapter10.md)
+* [11.特征描述](chapter11.md)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
