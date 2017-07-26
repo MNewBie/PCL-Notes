@@ -64,3 +64,7 @@ int main(int argc, char** argv)
 参考文献：
 (1) R.B. Rusu, N. Blodow, M. Beetz. Fast Point Feature Histograms (FPFH) for 3D Registration. In Proceedings of the IEEE International Conference on Robotics and Automation (ICRA), Kobe, Japan, May 12-17 2009.
 (2) R.B. Rusu, A. Holzbach, N. Blodow, M. Beetz. Fast Geometric Point Labeling using Conditional Random Fields. In Proceedings of the 22nd IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS), St. Louis, MO, USA, October 11-15 2009.
+
+相关类用法与PFH类似，只需要引入 `#include <pcl/features/fpfh.h>`;
+将 `typedef pcl::PFHSignature125 FeatureT` 替换为 `typedef pcl::FPFHSignature33 FeatureT`;
+将`pcl::PFHEstimation<PointT, PointNT, FeatureT> fest;` 替换 
