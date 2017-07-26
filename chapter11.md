@@ -74,3 +74,53 @@ int main(int argc, char** argv)
 参考文献：
 (1) F. Tombari, S. Salti, L. Di Stefano Unique Signatures of Histograms for Local Surface Description. In Proceedings of the 11th European Conference on Computer Vision (ECCV), Heraklion, Greece, September 5-11 2010.
 (2) F. Tombari, S. Salti, L. Di Stefano A Combined Texture-Shape Descriptor For Enhanced 3D Feature Matching. In Proceedings of the 18th International Conference on Image Processing (ICIP), Brussels, Belgium, September 11-14 2011.
+
+```
+#include <pcl/io/pcd_io.h>
+#include <pcl/point_types.h>
+// 包含相关头文件
+#include <pcl/features/shot.h>
+#include <pcl/features/normal_3d.h>
+
+#include "resolution.h" // 用于计算模型分辨率
+
+typedef pcl::PointXYZ PointT;
+typedef pcl::Normal PointNT;
+typedef pcl::SHOT352 FeatureT;
+
+int main(int argc, char** argv)
+{
+	// 读取点云
+	pcl::PointCloud<PointT>::Ptr cloud(new pcl::PointCloud<PointT>);
+	pcl::io::loadPCDFile(argv[1], *cloud);
+
+	// 读取关键点，也可以用之前提到的方法计算
+	pcl::PointCloud<PointT>::Ptr keys(new pcl::PointCloud<PointT>);
+	pcl::io::loadPCDFile(argv[2], *keys);
+
+	double resolution = computeCloudResolution(cloud);
+
+	// 法向量
+	pcl::NormalEstimation<PointT, PointNT> nest;
+	//	nest.setRadiusSearch(5*resolution);
+	nest.setKSearch(10);
+	pcl::PointCloud<pcl::Normal>::Ptr cloud_normal(new pcl::PointCloud<pcl::Normal>);
+	nest.setInputCloud(cloud);
+	nest.setSearchSurface(cloud);
+	nest.compute(*cloud_normal);
+	std::cout << "compute normal\n";
+
+	pcl::SHOTEstimation<pcl::PointXYZ, pcl::Normal, pcl::SHOT352> shot;
+	shot.setRadiusSearch(18 * resolution);
+	shot.setInputCloud(keys);
+	shot.setSearchSurface(cloud);
+	shot.setInputNormals(cloud_normal);
+	//shot.setInputReferenceFrames(lrf);  //也可以自己传入局部坐标系
+	pcl::PointCloud<FeatureT>::Ptr features(new pcl::PointCloud<FeatureT>);
+	shot.compute(*features);
+	std::cout << "compute feature\n";
+
+	system("pause");
+	return 0;
+}
+```
