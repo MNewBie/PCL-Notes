@@ -1,6 +1,6 @@
 # 工具函数
 
-给出一些可能会用到的工具函数。
+给出一些可能会用到的工具函数。代码来自<https://segmentfault.com/a/1190000007125502>
 
 * **时间计算**
 
@@ -166,7 +166,7 @@ int main(int argc,char **argv)
 
 
 ---
-以上代码来自<https://segmentfault.com/a/1190000007125502>
+以上
 
 
 
