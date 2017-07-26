@@ -3,6 +3,7 @@
 此处给出利用QT和VTK生成的插件，在QT界面中显示点云的例子。
 
 * 1、新建QT GUI项目，原生QT或者VS插件建立都可以。
+注意：VS添加“附加包含目录”、“附加库目录”、“附加依赖项”。QT则添加INCLUDEPATH、LIBS。
 
 * 2、用Qt Designer打开.ui文件，左侧工具栏可以看到QVTK插件。
 
