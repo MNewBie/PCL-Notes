@@ -155,12 +155,15 @@ void Qtttttt::onOpen()
 
 * **注意：**
 
->1、运行vtk出现错误：
-	错误：Error:no override found for ‘vtkRenderWindow’.
-	解决：在第一次使用vtk的头文件最前添加下面代码。
-			#include <vtkAutoInit.h> 
-			VTK_MODULE_INIT(vtkRenderingOpenGL2);
-			VTK_MODULE_INIT(vtkInteractionStyle);
+1、运行vtk出现错误：
+错误：Error:no override found for ‘vtkRenderWindow’.
+解决：在第一次使用vtk的头文件最前添加下面代码。
+
+```
+#include <vtkAutoInit.h> 
+VTK_MODULE_INIT(vtkRenderingOpenGL2); // 此处由于我编译qtvtk时选择的OpenGL2
+VTK_MODULE_INIT(vtkInteractionStyle);
+```
 
 >2、加入pcl出现错误：
 	错误：error C2440: “static_cast”: 无法从“vtkObjectBase *const ”转换为“vtkRenderWindow *
