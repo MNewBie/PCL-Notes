@@ -91,6 +91,10 @@ int main(int argc, char** argv)
 }
 ```
 
+* **SIFTKeypoint**
+
+SIFTKeypoint是对2D的sift算法的一个扩展。参考：David G. Lowe, "Distinctive image features from scale-invariant keypoints," International Journal of Computer Vision, 60, 2 (2004), pp. 91-110.
+
 
 
 
