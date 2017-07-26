@@ -199,7 +199,7 @@ int main(int argc, char** argv)
 	pcl::PointCloud<pcl::Histogram<135>> description;
 	rops.compute(description);  // 结果计算的是描述子。。需传入inputcloud和surface
 	std::cout << "size is " << description.points.size()<<std::endl;
-// 	pcl::io::savePCDFile("rops_des.pcd", description); // 此句出错！！pcl::Histogram没有对应的保存方法
+	//pcl::io::savePCDFile("rops_des.pcd", description); // 此句出错！！pcl::Histogram没有对应的保存方法
 	
 	system("pause");
 	return 0;
