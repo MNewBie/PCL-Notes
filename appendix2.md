@@ -44,3 +44,19 @@ pcl::io::loadPCDFile<pcl::PointXYZ> ("your_pcd_file.pcd", *cloud);
 pcl::PointXYZ minPt, maxPt;
 pcl::getMinMax3D (*cloud, minPt, maxPt);
 ```
+
+* **知道需要保存点的索引，从原点云中拷贝点到新点云**
+
+```
+#include <pcl/io/pcd_io.h>
+#include <pcl/common/impl/io.hpp>
+#include <pcl/point_types.h>
+#include <pcl/point_cloud.h>
+ 
+pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
+pcl::io::loadPCDFile<pcl::PointXYZ>("C:\office3-after21111.pcd", *cloud);
+pcl::PointCloud<pcl::PointXYZ>::Ptr cloudOut(new pcl::PointCloud<pcl::PointXYZ>);
+std::vector<int > indexs = { 1, 2, 5 };
+pcl::copyPointCloud(*cloud, indexs, *cloudOut);
+```
+
