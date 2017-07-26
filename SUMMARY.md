@@ -8,4 +8,6 @@
 * [5.可用Point类型\(下\)](chapter5.md)
 * [6.利用KDTree近邻搜索](chapter6.md)
 * [7.点云可视化](chapter7.md)
+* [8.滤波](chapter8.md)
+
 
