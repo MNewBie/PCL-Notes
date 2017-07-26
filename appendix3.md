@@ -136,7 +136,119 @@ a *= M;            R  = P + Q;      R  = P/s;
                    R -= Q;          R /= s;
 ```
 
+* **Eigen 矩阵单个元素操作**
 
+```
+// Vectorized operations on each element independently
+// Eigen                  // Matlab
+R = P.cwiseProduct(Q);    // R = P .* Q
+R = P.array() * s.array();// R = P .* s
+R = P.cwiseQuotient(Q);   // R = P ./ Q
+R = P.array() / Q.array();// R = P ./ Q
+R = P.array() + s.array();// R = P + s
+R = P.array() - s.array();// R = P - s
+R.array() += s;           // R = R + s
+R.array() -= s;           // R = R - s
+R.array() < Q.array();    // R < Q
+R.array() <= Q.array();   // R <= Q
+R.cwiseInverse();         // 1 ./ P
+R.array().inverse();      // 1 ./ P
+R.array().sin()           // sin(P)
+R.array().cos()           // cos(P)
+R.array().pow(s)          // P .^ s
+R.array().square()        // P .^ 2
+R.array().cube()          // P .^ 3
+R.cwiseSqrt()             // sqrt(P)
+R.array().sqrt()          // sqrt(P)
+R.array().exp()           // exp(P)
+R.array().log()           // log(P)
+R.cwiseMax(P)             // max(R, P)
+R.array().max(P.array())  // max(R, P)
+R.cwiseMin(P)             // min(R, P)
+R.array().min(P.array())  // min(R, P)
+R.cwiseAbs()              // abs(P)
+R.array().abs()           // abs(P)
+R.cwiseAbs2()             // abs(P.^2)
+R.array().abs2()          // abs(P.^2)
+(R.array() < s).select(P,Q);  // (R < s ? P : Q)
+```
+
+* **Eigen 矩阵化简**
+
+```
+// Reductions.
+int r, c;
+// Eigen                  // Matlab
+R.minCoeff()              // min(R(:))
+R.maxCoeff()              // max(R(:))
+s = R.minCoeff(&r, &c)    // [s, i] = min(R(:)); [r, c] = ind2sub(size(R), i);
+s = R.maxCoeff(&r, &c)    // [s, i] = max(R(:)); [r, c] = ind2sub(size(R), i);
+R.sum()                   // sum(R(:))
+R.colwise().sum()         // sum(R)
+R.rowwise().sum()         // sum(R, 2) or sum(R')'
+R.prod()                  // prod(R(:))
+R.colwise().prod()        // prod(R)
+R.rowwise().prod()        // prod(R, 2) or prod(R')'
+R.trace()                 // trace(R)
+R.all()                   // all(R(:))
+R.colwise().all()         // all(R)
+R.rowwise().all()         // all(R, 2)
+R.any()                   // any(R(:))
+R.colwise().any()         // any(R)
+R.rowwise().any()         // any(R, 2)
+```
+
+* **Eigen 矩阵点乘**
+
+```
+// Dot products, norms, etc.
+// Eigen                  // Matlab
+x.norm()                  // norm(x).    Note that norm(R) doesn't work in Eigen.
+x.squaredNorm()           // dot(x, x)   Note the equivalence is not true for complex
+x.dot(y)                  // dot(x, y)
+x.cross(y)                // cross(x, y) Requires #include <Eigen/Geometry>
+```
+
+* **Eigen 矩阵类型转换**
+
+```
+//// Type conversion
+// Eigen                           // Matlab
+A.cast<double>();                  // double(A)
+A.cast<float>();                   // single(A)
+A.cast<int>();                     // int32(A)
+A.real();                          // real(A)
+A.imag();                          // imag(A)
+// if the original type equals destination type, no work is done
+```
+
+* **Eigen 求解线性方程组 Ax = b**
+
+```
+// Solve Ax = b. Result stored in x. Matlab: x = A \ b.
+x = A.ldlt().solve(b));  // A sym. p.s.d.    #include <Eigen/Cholesky>
+x = A.llt() .solve(b));  // A sym. p.d.      #include <Eigen/Cholesky>
+x = A.lu()  .solve(b));  // Stable and fast. #include <Eigen/LU>
+x = A.qr()  .solve(b));  // No pivoting.     #include <Eigen/QR>
+x = A.svd() .solve(b));  // Stable, slowest. #include <Eigen/SVD>
+// .ldlt() -> .matrixL() and .matrixD()
+// .llt()  -> .matrixL()
+// .lu()   -> .matrixL() and .matrixU()
+// .qr()   -> .matrixQ() and .matrixR()
+// .svd()  -> .matrixU(), .singularValues(), and .matrixV()
+```
+
+* **Eigen 矩阵特征值**
+
+```
+// Eigenvalue problems
+// Eigen                          // Matlab
+A.eigenvalues();                  // eig(A);
+EigenSolver<Matrix3d> eig(A);     // [vec val] = eig(A)
+eig.eigenvalues();                // diag(val)
+eig.eigenvectors();               // vec
+// For self-adjoint matrices use SelfAdjointEigenSolver<>
+```
 
 
 
