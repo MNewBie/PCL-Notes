@@ -125,7 +125,7 @@ int main(int argc, char** argv)
 }
 ```
 
-* **Rops**
+* **RoPS**
 
 参考文献：
 "Rotational Projection Statistics for 3D Local Surface Description and Object Recognition" by Yulan Guo, Ferdous Sohel, Mohammed Bennamoun, Min Lu and Jianwei Wan.
