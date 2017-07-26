@@ -68,3 +68,9 @@ int main(int argc, char** argv)
 相关类用法与PFH类似，只需要引入 `#include <pcl/features/fpfh.h>`;
 将 `typedef pcl::PFHSignature125 FeatureT` 替换为 `typedef pcl::FPFHSignature33 FeatureT`;
 将`pcl::PFHEstimation<PointT, PointNT, FeatureT> fest;` 替换为 `pcl::FPFHEstimation<PointT, PointNT, FeatureT> fest;` 即可。
+
+* **SHOT**
+
+参考文献：
+(1) F. Tombari, S. Salti, L. Di Stefano Unique Signatures of Histograms for Local Surface Description. In Proceedings of the 11th European Conference on Computer Vision (ECCV), Heraklion, Greece, September 5-11 2010.
+(2) F. Tombari, S. Salti, L. Di Stefano A Combined Texture-Shape Descriptor For Enhanced 3D Feature Matching. In Proceedings of the 18th International Conference on Image Processing (ICIP), Brussels, Belgium, September 11-14 2011.
