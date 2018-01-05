@@ -15,11 +15,10 @@
 #include <pcl/kdtree/kdtree_flann.h>
 #include <pcl/features/normal_3d.h>
 #include <pcl/surface/gp3.h>
-
-#include "resolution.h"
 #include <pcl/visualization/pcl_visualizer.h>
-int
-main(int argc, char** argv)
+#include "resolution.h"
+
+int main(int argc, char** argv)
 {
 	// Load input file into a PointCloud<T> with an appropriate type
 	pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
@@ -39,12 +38,12 @@ main(int argc, char** argv)
 	n.setSearchMethod(tree);
 	n.setKSearch(20);
 	n.compute(*normals);
-	//* normals should not contain the point normals + surface curvatures
+	// normals should not contain the point normals + surface curvatures
 
 	// Concatenate the XYZ and normal fields*
 	pcl::PointCloud<pcl::PointNormal>::Ptr cloud_with_normals(new pcl::PointCloud<pcl::PointNormal>);
 	pcl::concatenateFields(*cloud, *normals, *cloud_with_normals);
-	//* cloud_with_normals = cloud + normals
+	// cloud_with_normals = cloud + normals
 
 	// Create search tree*
 	pcl::search::KdTree<pcl::PointNormal>::Ptr tree2(new pcl::search::KdTree<pcl::PointNormal>);
