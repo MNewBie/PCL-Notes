@@ -122,6 +122,11 @@ static_cast<LookUpTableRepresentationProperties>(int(value))
 ```
 >pcl1.8.0 用eigen3.3编译失败，ndt2d无法编译，换3.2可以
 
+>（3）带nurbs编译:（http://pointclouds.org/documentation/tutorials/bspline_fitting.php#bspline-fitting）
+	Please note that the modules for NURBS and B-splines are not enabled by default. Make sure you enable “BUILD_surface_on_nurbs” in your ccmake configuration, by setting it to ON.
+	If your license permits, also enable “USE_UMFPACK” for sparse linear solving. This requires SuiteSparse (libsuitesparse-dev in Ubuntu) which is faster, allows more degrees of freedom (i.e. control points) and more data points.
+	windows下需要编译SuiteSparse库才能勾选“USE_UMFPACK”，比较麻烦，可以不用勾选。
+
 * **添加环境变量**
 
 将以上所有编译的库中含有bin目录的添加到path中即可，OpenNI2添加Tools目录。
