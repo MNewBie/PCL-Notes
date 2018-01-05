@@ -1,6 +1,6 @@
 # 曲面重建 (分割与)
 
-曲面重建可以用于逆向工程、数据可视化、自动化建模等领域。PCL中目前实现了多种基于点云的曲面重建算法，如：泊松曲面重建、贪婪投影三角化、移动立方体、EarClipping等算法。可以参考<http://pointclouds.org/documentation/tutorials/>相关内容、CSDN博客<http://blog.csdn.net/xuezhisdc/article/details/51034359/>。
+曲面重建可以用于逆向工程、数据可视化、自动化建模等领域。PCL中目前实现了多种基于点云的曲面重建算法，如：泊松曲面重建、贪婪投影三角化、移动立方体、GridProjection、EarClipping等算法。可以参考<http://pointclouds.org/documentation/tutorials/>相关内容、CSDN博客<http://blog.csdn.net/xuezhisdc/article/details/51034359/>。
 
 还有一个特殊的B样条拟合( B-splines )，需要在pcl编译时特殊支持。OrganizedFastMesh需要输入有序的点云。
 而移动最小二乘(mls)虽然放在surface模块下，此类并不能输出拟合后的表面，不能生成Mesh或者Triangulations，只是将点云进行了MLS的映射，使得输出的点云更加平滑。
