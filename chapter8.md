@@ -73,25 +73,21 @@ void bilateralFilter(pcl::PointCloud<pcl::PointXYZI>::Ptr &input, pcl::PointClou
 	fbf.setHalfSize(0.1);
 	fbf.filter(*output);
 }
-
-int
-main(int argc, char** argv)
+int main(int argc, char** argv)
 {
 	pcl::PointCloud<pcl::PointXYZI>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZI>); // 需要PointXYZI 
-
 	pcl::PointCloud<pcl::PointXYZI>::Ptr cloud_filtered(new pcl::PointCloud<pcl::PointXYZI>);
 
 	// Fill in the cloud data
 	pcl::PCDReader reader;
 	// Replace the path below with the path where you saved your file
-	reader.read<pcl::PointXYZI>("armadillo_noise30.pcd", *cloud);
+	reader.read<pcl::PointXYZI>(argv[1], *cloud);
 
 	bilateralFilter(cloud, cloud_filtered);
 
 	/*pcl::visualization::PCLVisualizer viewer;
 	viewer.addPointCloud(cloud_filtered);
 	viewer.spin();*/
-
 
 	return (0);
 }
