@@ -222,9 +222,7 @@ int main(int argc, char** argv)
 虽说此类放在了Surface下面，但是通过反复的研究与使用，发现此类并不能输出拟合后的表面，不能生成Mesh或者Triangulations，只是将点云进行了MLS的映射，使得输出的点云更加平滑，进行上采样和计算法向量。
 
 ```
-/* 使用移动最小二乘法光滑曲面 */
 #include <iostream>
-
 #include <pcl/point_types.h>
 #include <pcl/io/pcd_io.h>
 #include <pcl/kdtree/kdtree_flann.h>
