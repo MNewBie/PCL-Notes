@@ -82,7 +82,7 @@ int main(int argc, char** argv)
 	pcl::PCDReader reader;
 	// Replace the path below with the path where you saved your file
 	reader.read<pcl::PointXYZI>(argv[1], *cloud);
-
+	
 	bilateralFilter(cloud, cloud_filtered);
 
 	/*pcl::visualization::PCLVisualizer viewer;
@@ -92,3 +92,7 @@ int main(int argc, char** argv)
 	return (0);
 }
 ```
+
+* **剔除离群点**
+
+参考：http://www.pointclouds.org/documentation/tutorials/statistical_outlier.php
