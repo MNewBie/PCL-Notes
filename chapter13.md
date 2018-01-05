@@ -219,7 +219,7 @@ int main(int argc, char** argv)
 
 * **移动最小二乘**
 
-虽说此类放在了Surface下面，但是通过反复的研究与使用，发现此类并不能输出拟合后的表面，不能生成Mesh或者Triangulations，只是将点云进行了MLS的映射，使得输出的点云更加平滑，进行上采样。研究源代码发现可以修改用来拟合曲面和计算法向量。
+虽说此类放在了Surface下面，但是通过反复的研究与使用，发现此类并不能输出拟合后的表面，不能生成Mesh或者Triangulations，只是将点云进行了MLS的映射，使得输出的点云更加平滑，进行上采样和计算法向量。
 
 ```
 /* 使用移动最小二乘法光滑曲面 */
@@ -249,10 +249,10 @@ int main(int argc, char** argv)
 
 	// Init object (second point type is for the normals, even if unused)
 	pcl::MovingLeastSquares<pcl::PointXYZ, pcl::PointNormal> mls;
-	mls.setComputeNormals(true);
-	// Set parameters
 	mls.setInputCloud(cloud);
-	mls.setPolynomialFit(true);
+	mls.setComputeNormals(true); //我们都知道表面重构时需要估计点云的法向量，这里MLS提供了一种方法来估计点云法向量。（如果是true的话注意输出数据格式）。
+	mls.setPolynomialFit(true); //对于法线的估计是有多项式还是仅仅依靠切线。
+	mls.void setPolynomialOrder(3); //MLS拟合曲线的阶数，这个阶数在构造函数里默认是2，但是参考文献给出最好选择3或者4
 	mls.setSearchMethod(tree);
 	mls.setSearchRadius(10 * resolution);
 	// Reconstruct
