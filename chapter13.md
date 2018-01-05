@@ -106,6 +106,8 @@ pn.setSearchMethod(tree2);
 pn.setInputCloud(cloud_with_normals);
 pcl::PolygonMesh mesh;
 pn.performReconstruction(mesh);
+(其他同上)
+
 
 ```
 
@@ -126,6 +128,7 @@ mc->setInputCloud(cloud_with_normals);
 
 pcl::PolygonMesh mesh;//执行重构，结果保存在mesh中
 mc->reconstruct(mesh);
+(其他同上)
 ```
 
 * **B样条拟合**
