@@ -90,65 +90,23 @@ int main(int argc, char** argv)
 泊松曲面重建基于泊松方程。根据泊松方程使用矩阵迭代求出近似解，采用移动立方体算法提取等值面，对所测数据点集重构出被测物体的模型，泊松方程在边界处的误差为零，因此得到的模型不存在假的表面框。(http://blog.csdn.net/jennychenhit/article/details/52126156?locationNum=8)
 
 ```
-#include <pcl/point_types.h>
-#include <pcl/io/pcd_io.h>
-#include <pcl/kdtree/kdtree_flann.h>
-#include <pcl/features/normal_3d.h>
 #include <pcl/surface/poisson.h>
-#include <pcl/visualization/pcl_visualizer.h>
 
-int main(int argc, char** argv)
-{
-	// Load input file into a PointCloud<T> with an appropriate type
-	pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
-	pcl::PCLPointCloud2 cloud_blob;
-	pcl::io::loadPCDFile(argv[1], cloud_blob);
-	pcl::fromPCLPointCloud2(cloud_blob, *cloud);
-	//* the data should be available in cloud
+pcl::Poisson<pcl::PointNormal> pn;
+pn.setConfidence(false);
+pn.setDegree(2);
+pn.setDepth(8);
+pn.setIsoDivide(8);
+pn.setManifold(false);
+pn.setOutputPolygons(false);
+pn.setSamplesPerNode(3.0);
+pn.setScale(1.25);
+pn.setSolverDivide(8);
+pn.setSearchMethod(tree2);
+pn.setInputCloud(cloud_with_normals);
+pcl::PolygonMesh mesh;
+pn.performReconstruction(mesh);
 
-	// Normal estimation*
-	pcl::NormalEstimation<pcl::PointXYZ, pcl::Normal> n;
-	pcl::PointCloud<pcl::Normal>::Ptr normals(new pcl::PointCloud<pcl::Normal>);
-	pcl::search::KdTree<pcl::PointXYZ>::Ptr tree(new pcl::search::KdTree<pcl::PointXYZ>);
-	tree->setInputCloud(cloud);
-	n.setInputCloud(cloud);
-	n.setSearchMethod(tree);
-	n.setKSearch(20);
-	n.compute(*normals);
-	//* normals should not contain the point normals + surface curvatures
-
-	// Concatenate the XYZ and normal fields*
-	pcl::PointCloud<pcl::PointNormal>::Ptr cloud_with_normals(new pcl::PointCloud<pcl::PointNormal>);
-	pcl::concatenateFields(*cloud, *normals, *cloud_with_normals);
-	//* cloud_with_normals = cloud + normals
-
-	// Create search tree*
-	pcl::search::KdTree<pcl::PointNormal>::Ptr tree2(new pcl::search::KdTree<pcl::PointNormal>);
-	tree2->setInputCloud(cloud_with_normals);
-
-	pcl::Poisson<pcl::PointNormal> pn;
-	pn.setConfidence(false);
-	pn.setDegree(2);
-	pn.setDepth(8);
-	pn.setIsoDivide(8);
-	pn.setManifold(false);
-	pn.setOutputPolygons(false);
-	pn.setSamplesPerNode(3.0);
-	pn.setScale(1.25);
-	pn.setSolverDivide(8);
-	pn.setSearchMethod(tree2);
-	pn.setInputCloud(cloud_with_normals);
-	pcl::PolygonMesh mesh;
-	pn.performReconstruction(mesh);
-
-	// show
-	pcl::visualization::PCLVisualizer viewer;
-	viewer.addPolygonMesh(mesh, "mesh");
-	viewer.spin();
-
-	// Finish
-	return (0);
-}
 ```
 
 * **移动立方体**
@@ -156,61 +114,18 @@ int main(int argc, char** argv)
 MarchingCubes(移动立方体)算法是目前三围数据场等值面生成中最常用的方法。它实际上是一个分而治之的方法，把等值面的抽取分布于每个体素中进行。对于每个被处理的体素，以三角面片逼近其内部的等值面片。每个体素是一个小立方体，构造三角面片的处理过程对每个体素都“扫描”一遍，就好像一个处理器在这些体素上移动一样，由此得名移动立方体算法。
 
 ```
-#include <pcl/point_types.h>
-#include <pcl/io/pcd_io.h>
-#include <pcl/kdtree/kdtree_flann.h>
-#include <pcl/features/normal_3d.h>
 #include <pcl/surface/marching_cubes_hoppe.h>
-#include <pcl/visualization/pcl_visualizer.h>
 
-int main(int argc, char** argv)
-{
-	// Load input file into a PointCloud<T> with an appropriate type
-	pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>);
-	pcl::PCLPointCloud2 cloud_blob;
-	pcl::io::loadPCDFile(argv[1], cloud_blob);
-	pcl::fromPCLPointCloud2(cloud_blob, *cloud);
-	//* the data should be available in cloud
+pcl::MarchingCubes<pcl::PointNormal>::Ptr mc(new pcl::MarchingCubesHoppe<pcl::PointNormal>);
+//设置MarchingCubes对象的参数
+mc->setIsoLevel(0.0f);
+mc->setGridResolution(5, 5, 5);
+mc->setPercentageExtendGrid(0.0f);
+mc->setSearchMethod(tree2);
+mc->setInputCloud(cloud_with_normals);
 
-	// Normal estimation*
-	pcl::NormalEstimation<pcl::PointXYZ, pcl::Normal> n;
-	pcl::PointCloud<pcl::Normal>::Ptr normals(new pcl::PointCloud<pcl::Normal>);
-	pcl::search::KdTree<pcl::PointXYZ>::Ptr tree(new pcl::search::KdTree<pcl::PointXYZ>);
-	tree->setInputCloud(cloud);
-	n.setInputCloud(cloud);
-	n.setSearchMethod(tree);
-	n.setKSearch(20);
-	n.compute(*normals);
-	//* normals should not contain the point normals + surface curvatures
-
-	// Concatenate the XYZ and normal fields*
-	pcl::PointCloud<pcl::PointNormal>::Ptr cloud_with_normals(new pcl::PointCloud<pcl::PointNormal>);
-	pcl::concatenateFields(*cloud, *normals, *cloud_with_normals);
-	//* cloud_with_normals = cloud + normals
-
-	// Create search tree*
-	pcl::search::KdTree<pcl::PointNormal>::Ptr tree2(new pcl::search::KdTree<pcl::PointNormal>);
-	tree2->setInputCloud(cloud_with_normals);
-
-	pcl::MarchingCubes<pcl::PointNormal>::Ptr mc(new pcl::MarchingCubesHoppe<pcl::PointNormal>);
-	//设置MarchingCubes对象的参数
-	mc->setIsoLevel(0.0f);
-	mc->setGridResolution(5, 5, 5);
-	mc->setPercentageExtendGrid(0.0f);
-	mc->setSearchMethod(tree2);
-	mc->setInputCloud(cloud_with_normals);
-
-	pcl::PolygonMesh mesh;//执行重构，结果保存在mesh中
-	mc->reconstruct(mesh);
-
-	// show
-	pcl::visualization::PCLVisualizer viewer;
-	viewer.addPolygonMesh(mesh, "mesh");
-	viewer.spin();
-
-	// Finish
-	return (0);
-}
+pcl::PolygonMesh mesh;//执行重构，结果保存在mesh中
+mc->reconstruct(mesh);
 ```
 
 * **B样条拟合**
