@@ -18,7 +18,6 @@
 
 #include "resolution.h"
 #include <pcl/visualization/pcl_visualizer.h>
-
 int
 main(int argc, char** argv)
 {
