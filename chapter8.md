@@ -10,6 +10,8 @@ PCL中点云滤波模块提供了很多灵活实用的滤波处理算法，例�
 
 下边给出两个下采样类的应用实例。（VoxelGrid、UniformSampling）
 
+* **VoxelGrid、UniformSampling**
+
 ```
 #include <pcl/io/pcd_io.h>
 #include <pcl/point_types.h>
