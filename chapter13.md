@@ -3,7 +3,7 @@
 曲面重建可以用于逆向工程、数据可视化、自动化建模等领域。PCL中目前实现了多种基于点云的曲面重建算法，如：泊松曲面重建、贪婪投影三角化、移动立方体、EarClipping等算法。可以参考<http://pointclouds.org/documentation/tutorials/>相关内容、CSDN博客<http://blog.csdn.net/xuezhisdc/article/details/51034359/>。
 
 还有一个特殊的B样条拟合( B-splines )，需要在pcl编译时特殊支持。OrganizedFastMesh需要输入有序的点云。
-而移动最小二乘(mls)虽然放在surface模块下，。。。
+而移动最小二乘(mls)虽然放在surface模块下，此类并不能输出拟合后的表面，不能生成Mesh或者Triangulations，只是将点云进行了MLS的映射，使得输出的点云更加平滑。
 
 * **贪婪投影三角化算法**
 
@@ -212,6 +212,71 @@ int main(int argc, char** argv)
 	return (0);
 }
 ```
+
+* **B样条拟合**
+
+参考：http://pointclouds.org/documentation/tutorials/bspline_fitting.php#bspline-fitting
+
+* **移动最小二乘**
+
+虽说此类放在了Surface下面，但是通过反复的研究与使用，发现此类并不能输出拟合后的表面，不能生成Mesh或者Triangulations，只是将点云进行了MLS的映射，使得输出的点云更加平滑，进行上采样。研究源代码发现可以修改用来拟合曲面和计算法向量。
+
+```
+/* 使用移动最小二乘法光滑曲面 */
+#include <iostream>
+
+#include <pcl/point_types.h>
+#include <pcl/io/pcd_io.h>
+#include <pcl/kdtree/kdtree_flann.h>
+#include <pcl/surface/mls.h>
+#include <pcl/visualization/pcl_visualizer.h>
+#include "resolution.h"
+
+int main(int argc, char** argv)
+{
+	// Load input file into a PointCloud<T> with an appropriate type
+	pcl::PointCloud<pcl::PointXYZ>::Ptr cloud(new pcl::PointCloud<pcl::PointXYZ>());
+	// Load bun0.pcd -- should be available with the PCL archive in test 
+	pcl::io::loadPCDFile(argv[1], *cloud);
+
+	double resolution = computeCloudResolution(cloud);
+
+	// Create a KD-Tree
+	pcl::search::KdTree<pcl::PointXYZ>::Ptr tree(new pcl::search::KdTree<pcl::PointXYZ>);
+
+	// Output has the PointNormal type in order to store the normals calculated by MLS
+	pcl::PointCloud<pcl::PointNormal> mls_points;
+
+	// Init object (second point type is for the normals, even if unused)
+	pcl::MovingLeastSquares<pcl::PointXYZ, pcl::PointNormal> mls;
+	mls.setComputeNormals(true);
+	// Set parameters
+	mls.setInputCloud(cloud);
+	mls.setPolynomialFit(true);
+	mls.setSearchMethod(tree);
+	mls.setSearchRadius(10 * resolution);
+	// Reconstruct
+	mls.process(mls_points);
+	
+	// Save output
+	//pcl::io::savePCDFile("bun0-mls.pcd", mls_points);
+	// show
+	pcl::visualization::PCLVisualizer viewer_1;
+	viewer_1.addPointCloud(cloud, "cloud");
+	viewer_1.spin();
+
+	pcl::visualization::PCLVisualizer viewer_2;
+	pcl::PointCloud<pcl::PointXYZ>::Ptr result(new pcl::PointCloud<pcl::PointXYZ>);
+	pcl::copyPointCloud(mls_points, *result);
+	viewer_2.addPointCloud(result, "mls_points");
+	viewer_2.spin();
+
+	return 0;
+}
+```
+
+
+
 
 
 
