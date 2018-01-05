@@ -107,8 +107,6 @@ pn.setInputCloud(cloud_with_normals);
 pcl::PolygonMesh mesh;
 pn.performReconstruction(mesh);
 (其他同上)
-
-
 ```
 
 * **移动立方体**
