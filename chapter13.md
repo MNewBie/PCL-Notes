@@ -88,6 +88,7 @@ int main(int argc, char** argv)
 
 泊松曲面重建基于泊松方程。根据泊松方程使用矩阵迭代求出近似解，采用移动立方体算法提取等值面，对所测数据点集重构出被测物体的模型，泊松方程在边界处的误差为零，因此得到的模型不存在假的表面框。(http://blog.csdn.net/jennychenhit/article/details/52126156?locationNum=8)
 
+
 ```
 #include <pcl/point_types.h>
 #include <pcl/io/pcd_io.h>
