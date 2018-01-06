@@ -6,6 +6,9 @@
 
 PCL中也提供了ICP算法和一些改进算法。
 
+* **ICP**
+
+参考：http://pointclouds.org/documentation/tutorials/iterative_closest_point.php#iterative-closest-point
 
 gicp
 
