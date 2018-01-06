@@ -12,6 +12,8 @@ PCL中也提供了ICP算法和一些改进算法。
 
 * **GeneralizedIterativeClosestPoint**
 
+论文：http://www.robots.ox.ac.uk/~avsegal/resources/papers/Generalized_ICP.pdf
+
 ```
 pcl::GeneralizedIterativeClosestPoint<pcl::PointXYZ, pcl::PointXYZ> gicp;
 
