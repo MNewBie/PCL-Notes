@@ -4,6 +4,8 @@
 
 改进的ICP可以采用GPU对迭代进行加速，或者针对最近点选取上采用Point to Point、Point to Plane、Point to Projection等一些方式完成，或者针对收敛函数做一些改变。
 
+PCL中也提供了ICP算法和一些改进算法。
+
 
 gicp
 
