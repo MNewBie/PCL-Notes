@@ -10,6 +10,23 @@ PCL中也提供了ICP算法和一些改进算法。
 
 参考：http://pointclouds.org/documentation/tutorials/iterative_closest_point.php#iterative-closest-point
 
-gicp
+* **GeneralizedIterativeClosestPoint**
 
-sicp
+```
+pcl::GeneralizedIterativeClosestPoint<pcl::PointXYZ, pcl::PointXYZ> gicp;
+
+gicp.setInputSource(cloud_src);
+gicp.setInputTarget(cloud_tgt);
+
+gicp.setMaximumIterations(100);
+gicp.setTransformationEpsilon(1e-6);
+gicp.setEuclideanFitnessEpsilon(0.1);
+gicp.setMaxCorrespondenceDistance(0.01);
+
+pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_final(new pcl::PointCloud<pcl::PointXYZ>);
+gicp.align(*cloud_final);
+```
+
+* **Sparse ICP**
+
+参考:http://lgg.epfl.ch/sparseicp
