@@ -1,5 +1,6 @@
 # 常用模型库
 
+* https://www.cc.gatech.edu/~turk/bunny/bunny.html
 * <http://www.cc.gatech.edu/projects/large_models/>
 * <http://graphics.stanford.edu/data/3Dscanrep/>
 * http://www.cc.gatech.edu/~turk/zipper/zipper.html
