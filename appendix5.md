@@ -7,6 +7,7 @@
 * http://staffhome.ecm.uwa.edu.au/~00053650/recognition.html
 * http://gfx.cs.princeton.edu/proj/sugcon/models/
 * http://pointclouds.org/media/
+* http://rgbd-dataset.cs.washington.edu/dataset/
 
 
 
