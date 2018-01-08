@@ -12,7 +12,7 @@
 
 
 
-* api文档：http://docs.pointclouds.org/trunk/index.html
+* api文档：<http://docs.pointclouds.org/trunk/index.html/>
 * 英文教程：http://pointclouds.org/documentation/tutorials/
 * 英文论坛：http://www.pcl-users.org/
 * 中文论坛：http://www.pclcn.org/bbs/forum.php
