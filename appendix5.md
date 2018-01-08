@@ -6,3 +6,11 @@
 * http://staffhome.ecm.uwa.edu.au/~00053650/recognition.html
 * http://gfx.cs.princeton.edu/proj/sugcon/models/
 * http://pointclouds.org/media/
+
+
+
+* api文档：http://docs.pointclouds.org/trunk/index.html
+* 英文教程：http://pointclouds.org/documentation/tutorials/
+* 英文论坛：http://www.pcl-users.org/
+* 中文论坛：http://www.pclcn.org/bbs/forum.php
+* 各种描述子：http://robotica.unileon.es/index.php/PCL/OpenNI_tutorial_4:_3D_object_recognition_(descriptors)
