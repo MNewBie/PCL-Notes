@@ -85,6 +85,8 @@ configure -platform win32-msvc2015 -confirm-license -opensource -debug-and-relea
 
 将qt的bin目录添加到环境变量path中。
 
+注：如果需要编译64位qt，只需要打开vs64位命令行即可，还需要一些其他第三方软件，百度即可。
+
 * **编译VTK库**
 
 使用cmake，分别设置VTK的source和build路径，选择vs编译器．注意根据需要修改CMAKE\_INSTALL\_PREFIX选项，然后添加一个entry：
